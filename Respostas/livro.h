@@ -38,7 +38,7 @@ int getAnoPubliLivro(Livro *dom_peixote);
  * @param book O livro
  * @return id de book
  */
-int getIdLivro(Livro *book);
+int getIdLivro(void *book);
 
 char *getAutorLivro(Livro *vidas_molhadas);
 

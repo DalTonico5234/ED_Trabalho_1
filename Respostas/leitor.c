@@ -1,5 +1,8 @@
+
 #include "leitor.h"
-struct Leitor{
+
+struct Leitor
+{
     char *nome;
     int id;
     int npref;
@@ -9,58 +12,88 @@ struct Leitor{
     Lista *recomendacoes;
     void *temporario;
 };
-Leitor *criaLeitor(int id, char* nome, char** preferencias, int npref){
-Leitor *lei = (Leitor*) malloc(sizeof(Leitor));
-scanf("%d;",&lei->id);
-lei->id=id;
-lei->nome=strdup(nome);
-lei->preferencias= (char**) malloc(npref*sizeof(char*));
-lei->npref=npref;
-for(int i=0;i<npref;i++){
-lei->preferencias[i]=strdup(preferencias[i]);
+
+Leitor *criaLeitor(int id, char *nome, char **preferencias, int npref)
+{
+    Leitor *lei = (Leitor *)malloc(sizeof(Leitor));
+    scanf("%d;", &lei->id);
+    lei->id = id;
+    lei->nome = strdup(nome);
+    lei->preferencias = (char **)malloc(npref * sizeof(char *));
+    lei->npref = npref;
+    for (int i = 0; i < npref; i++)
+    {
+        lei->preferencias[i] = strdup(preferencias[i]);
+    }
+    lei->desejados = criaLista();
+    lei->recomendacoes = criaLista();
+    lei->lidos = criaLista();
+    return lei;
 }
-lei->desejados=criaLista();
-lei->recomendacoes=criaLista();
-lei->lidos=criaLista();
-return lei;
+
+int getIdLeitor(void *lei)
+{
+    if (!lei)
+    {
+        printf("ERRO em ponteiro de leitor\n");
+        return -1;
+    }
+    
+    Leitor *reader = (Leitor *) lei;
+    return reader->id;
 }
-void imprimeLeitor(Leitor *lei){
-    printf("Leitor: %s\n",lei->nome);
+
+void imprimeLeitor(Leitor *lei)
+{
+    printf("Leitor: %s\n", lei->nome);
     printf("Lidos:");
     imprimeLista(lei->lidos);
-     printf("Desejados:");
+    printf("Desejados:");
     imprimeLista(lei->desejados);
-     printf("Recomendacoes:");
+    printf("Recomendacoes:");
     imprimeLista(lei->recomendacoes);
- printf("Afinidades:\n");
+    printf("Afinidades:\n");
+}
 
+void adicionarLidos(Leitor *lei, Livro *liv)
+{
+    insereNaLista(lei->lidos, liv);
 }
-void adicionarLidos(Leitor *lei, Livro *liv){
-    insereNaLista(lei->lidos,liv);
+
+void adicionarDesejos(Leitor *lei, Livro *liv)
+{
+    insereNaLista(lei->desejados, liv);
 }
-void adicionarDesejos(Leitor *lei, Livro *liv){
-    insereNaLista(lei->desejados,liv);
+
+void recomendarLivro(Leitor *lei, Livro *liv)
+{
+    insereNaLista(lei->recomendacoes, liv);
 }
-void recomendarLivro(Leitor *lei, Livro *liv){
-    insereNaLista(lei->recomendacoes,liv);
+
+void removerRecomendacao(Leitor *lei, Livro *liv)
+{
+    retiraDaLista(lei->recomendacoes, getTituloLivro(liv));
 }
-void removerRecomendacao(Leitor *lei, Livro *liv){
-    retiraDaLista(lei->recomendacoes,getNomeLivro(liv));
-}
-void processarRecomendacao(Leitor *lei, Livro *liv, int yesno){
-    if(yesno==1){
-        adicionarDesejos(lei,liv);
+
+void processarRecomendacao(Leitor *lei, Livro *liv, int yesno)
+{
+    if (yesno == 1)
+    {
+        adicionarDesejos(lei, liv);
     }
-     removerRecomendacao(lei,liv);
+    removerRecomendacao(lei, liv);
 }
-void desalocaLeitor(Leitor *lei){
-free(lei->nome);
-for(int i=0;i<lei->npref;i++){
-free(lei->preferencias[i]);
-}
-free(lei->preferencias);
-desalocaLista(lei->lidos);
-desalocaLista(lei->recomendacoes);
-desalocaLista(lei->desejados);
-free(lei);
+
+void desalocaLeitor(Leitor *lei)
+{
+    free(lei->nome);
+    for (int i = 0; i < lei->npref; i++)
+    {
+        free(lei->preferencias[i]);
+    }
+    free(lei->preferencias);
+    desalocaLista(lei->lidos);
+    desalocaLista(lei->recomendacoes);
+    desalocaLista(lei->desejados);
+    free(lei);
 }

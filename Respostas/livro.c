@@ -60,7 +60,7 @@ int getIdLivro(void *senhor_dos_pasteis)
     if (!senhor_dos_pasteis)
     {
         printf("ERRO em ponteiro de livro\n");
-        return 0;
+        return -1;
     }
     Livro *senhora_dos_pasteis = (Livro *) senhor_dos_pasteis;
 

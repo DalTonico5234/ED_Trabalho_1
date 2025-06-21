@@ -9,7 +9,6 @@
 #define MAX_STRING 200
 #define LIVRO 1
 #define LEITOR 2
-
-char *leAtributo(FILE *fp);
+#define RECOMENDACAO 3
 
 #endif
