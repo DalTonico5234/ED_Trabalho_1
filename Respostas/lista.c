@@ -1,43 +1,49 @@
 
-// #include "lista.h"
-// #include <stdlib.h>
-// #include <stdio.h>
+#include "lista.h"
+#include <stdlib.h>
+#include <stdio.h>
 
-// typedef struct celula Celula;
+typedef struct celula Celula;
 
-// struct celula
-// {
-//     Celula *prox;
-//     Celula *ant;
-//     void *dado;
-//     int tipo;
-// };
+typedef int (*fGetIdDado)(void *);
 
-// struct lista
-// {
-//     Celula *prim;
-//     Celula *ult;
-// };
+struct celula
+{
+    Celula *prox;
+    Celula *ant;
+    void *dado;
+    int tipo;
+};
 
-// Lista *criaLista()
-// {
-//     Lista *list = (Lista *) malloc (sizeof(Lista));
+struct lista
+{
+    Celula *prim;
+    Celula *ult;
+};
+
+Lista *criaLista()
+{
+    Lista *list = (Lista *) malloc (sizeof(Lista));
    
-//     list->prim = NULL;
-//     list->ult = NULL;
+    list->prim = NULL;
+    list->ult = NULL;
    
-//     return list;
-// }
+    return list;
+}
 
-// void insereNaLista(Lista *list, void *dado, int tipo)
-// {
-    
-// }
+void insereNaLista(Lista *list, void *dado, int tipo);
 
-// static Celula *buscaNaLista(Lista *list);
+static Celula *buscaNaLista(Lista *list, int id, fGetIdDado getId)
+{
+    Celula *temp;
+    for (temp = list->prim; temp != NULL; temp = temp->prox)
+    {
+        if (getId(temp->dado) == id)
+        {
+            return temp;
+        }
+    }
+    return NULL;
+}
 
-// void liberaLista(Lista *list)
-// {
-
-// }
-
+void liberaLista(Lista *list);

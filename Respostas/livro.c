@@ -55,15 +55,16 @@ int getAnoPubliLivro(Livro *dom_peixote)
     return dom_peixote->ano_publi;
 }
 
-int getIdLivro(Livro *senhor_dos_pasteis)
+int getIdLivro(void *senhor_dos_pasteis)
 {
     if (!senhor_dos_pasteis)
     {
         printf("ERRO em ponteiro de livro\n");
         return 0;
     }
+    Livro *senhora_dos_pasteis = (Livro *) senhor_dos_pasteis;
 
-    return senhor_dos_pasteis->id;
+    return senhora_dos_pasteis->id;
 }
 
 char *getGeneroLivro(Livro *game_of_cones)
