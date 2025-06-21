@@ -13,7 +13,7 @@ struct Leitor
     Lista *afinidades;
 };
 
-Leitor *criaLeitor(int id, char *nome, char **preferencias, int npref)
+Leitor *criaLeitor(int id, char *nome, char preferencias[][200], int npref)
 {
     Leitor *lei = (Leitor *)malloc(sizeof(Leitor));
     lei->id = id;
@@ -108,3 +108,19 @@ char* getNomeLeitor(void *lei){
 void adicionarAfinidade(Leitor *destino, Leitor *afinidade){
     insereNaLista(destino->afinidades, afinidade, LEITOR);
 }
+
+Leitor *leLeitor(FILE *fLeitor, int *foi_lido){
+    int id;
+    int npref;
+    char nome[MAX_STRING] = "a";
+int *foi_lido2;
+    *foi_lido = fscanf(fLeitor, "%d;%[^;];%d;", &id, nome, &npref);
+     char preferencias[npref][MAX_STRING];
+for(int i=0;i<npref;i++){
+  *foi_lido2 = fscanf(fLeitor, "%200[^;\n]",preferencias[i]);
+}
+    Leitor *lelei = criaLeitor(id, nome, preferencias, npref);
+
+    return lelei;
+}
+

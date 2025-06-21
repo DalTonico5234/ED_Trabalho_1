@@ -9,7 +9,9 @@
 #include "uteis.h"
 typedef struct Leitor Leitor;
 
-Leitor *criaLeitor(int id, char* nome, char** preferencias, int npref);
+Leitor *criaLeitor(int id, char* nome, char preferencias[][200], int npref);
+
+Leitor *leLeitor(FILE *fLeitor, int *foi_lido);
 
 int getIdLeitor(void *lei);
 
@@ -27,4 +29,5 @@ void processarRecomendacao(Leitor *lei, Livro *liv, int yesno);
 
 void removerRecomendacao(Leitor *lei, Livro *liv);
 
+void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
 #endif
