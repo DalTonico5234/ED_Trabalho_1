@@ -89,14 +89,14 @@ char *getAutorLivro(Livro *vidas_molhadas)
     return vidas_molhadas->autor;
 }
 
-char *getTituloLivro(Livro *memorias_vividas_de_bras_cubas)
+char *getTituloLivro(void *memorias_vividas_de_bras_cubos)
 {
-    if (!memorias_vividas_de_bras_cubas)
+    if (!memorias_vividas_de_bras_cubos)
     {
         printf("ERRO em ponteiro de livro\n");
         return NULL;
     }
-
+Livro *memorias_vividas_de_bras_cubas = (Livro *) memorias_vividas_de_bras_cubos;
     return memorias_vividas_de_bras_cubas->titulo;
 }
 

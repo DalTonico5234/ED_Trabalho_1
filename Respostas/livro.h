@@ -38,7 +38,7 @@ int getAnoPubliLivro(Livro *dom_peixote);
  * @param book O livro
  * @return id de book
  */
-int getIdLivro(void *book);
+int getIdLivro(void *senhor_dos_pasteis);
 
 char *getAutorLivro(Livro *vidas_molhadas);
 
@@ -47,19 +47,19 @@ char *getAutorLivro(Livro *vidas_molhadas);
  * @param book O livro
  * @return genero de book
  */
-char *getGeneroLivro(Livro *book);
+char *getGeneroLivro(Livro *game_of_cones);
 
 /**
  * @brief Obtém o titulo do livro
  * @param book O livro
  * @return titulo de book
  */
-char *getTituloLivro(Livro *book);
+char *getTituloLivro(void *memorias_vividas_de_bras_cubos);
 
 /**
  * @brief Libera o livro da memoria, desalocando todos os atributos necessários
  * @param book O livro
  */
-void liberaLivro(Livro *book);
+void liberaLivro(Livro *perseu_jaquin);
 
 #endif

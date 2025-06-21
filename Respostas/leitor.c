@@ -10,13 +10,12 @@ struct Leitor
     Lista *lidos;
     Lista *desejados;
     Lista *recomendacoes;
-    void *temporario;
+    Lista *afinidades;
 };
 
 Leitor *criaLeitor(int id, char *nome, char **preferencias, int npref)
 {
     Leitor *lei = (Leitor *)malloc(sizeof(Leitor));
-    scanf("%d;", &lei->id);
     lei->id = id;
     lei->nome = strdup(nome);
     lei->preferencias = (char **)malloc(npref * sizeof(char *));
@@ -28,6 +27,7 @@ Leitor *criaLeitor(int id, char *nome, char **preferencias, int npref)
     lei->desejados = criaLista();
     lei->recomendacoes = criaLista();
     lei->lidos = criaLista();
+    lei->afinidades = criaLista();
     return lei;
 }
 
@@ -43,36 +43,38 @@ int getIdLeitor(void *lei)
     return reader->id;
 }
 
-void imprimeLeitor(Leitor *lei)
+void imprimeLeitor(void *leis)
 {
+Leitor *lei = (Leitor*) leis;
     printf("Leitor: %s\n", lei->nome);
     printf("Lidos:");
-    imprimeLista(lei->lidos);
+    imprimeLista(lei->lidos,LIVRO);
     printf("Desejados:");
-    imprimeLista(lei->desejados);
+    imprimeLista(lei->desejados,LIVRO);
     printf("Recomendacoes:");
-    imprimeLista(lei->recomendacoes);
+    imprimeLista(lei->recomendacoes,LIVRO);
     printf("Afinidades:\n");
+    imprimeLista(lei->afinidades,AFINIDADES);
 }
 
 void adicionarLidos(Leitor *lei, Livro *liv)
 {
-    insereNaLista(lei->lidos, liv);
+    insereNaLista(lei->lidos, liv, LIVRO);
 }
 
 void adicionarDesejos(Leitor *lei, Livro *liv)
 {
-    insereNaLista(lei->desejados, liv);
+    insereNaLista(lei->desejados, liv, LIVRO);
 }
 
 void recomendarLivro(Leitor *lei, Livro *liv)
 {
-    insereNaLista(lei->recomendacoes, liv);
+    insereNaLista(lei->recomendacoes, liv, LIVRO);
 }
 
 void removerRecomendacao(Leitor *lei, Livro *liv)
 {
-    retiraDaLista(lei->recomendacoes, getTituloLivro(liv));
+    retiraDaLista(lei->recomendacoes, getIdLivro(liv), LIVRO);
 }
 
 void processarRecomendacao(Leitor *lei, Livro *liv, int yesno)
@@ -92,8 +94,17 @@ void desalocaLeitor(Leitor *lei)
         free(lei->preferencias[i]);
     }
     free(lei->preferencias);
-    desalocaLista(lei->lidos);
-    desalocaLista(lei->recomendacoes);
-    desalocaLista(lei->desejados);
+    liberaLista(lei->lidos);
+    liberaLista(lei->recomendacoes);
+    liberaLista(lei->desejados);
     free(lei);
+}
+
+char* getNomeLeitor(void *lei){
+    Leitor *le = (Leitor*) lei;
+    return le->nome;
+}
+
+void adicionarAfinidade(Leitor *destino, Leitor *afinidade){
+    insereNaLista(destino->afinidades, afinidade, LEITOR);
 }

@@ -4,16 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "listalivros.h"
+#include "lista.h"
 #include "livro.h"
-
+#include "uteis.h"
 typedef struct Leitor Leitor;
 
-Leitor *criaLeitor(int id, char* nome, char** preferencias);
+Leitor *criaLeitor(int id, char* nome, char** preferencias, int npref);
 
 int getIdLeitor(void *lei);
 
-void imprimeLeitor(Leitor *lei);
+char* getNomeLeitor(void *lei);
+
+void imprimeLeitor(void *leis);
 
 void adicionarLidos(Leitor *lei, Livro *liv);
 

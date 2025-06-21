@@ -43,7 +43,7 @@ void insereNaLista(Lista *list, void *dado, int tipo)
         printf("ERRO em ponteiro de dado a ser inserido\n");
         return;
     }
-    Celula *nova = (Celula *) malloc (sizeof(Celula));
+    Celula *nova = (Celula *)malloc(sizeof(Celula));
     nova->dado = dado;
     nova->tipo = tipo;
 
@@ -61,12 +61,12 @@ void insereNaLista(Lista *list, void *dado, int tipo)
 
 static Celula *buscaNaLista(Lista *list, int id, fGetIdDado getId)
 {
-    Celula *temp;
-    for (temp = list->prim; temp != NULL; temp = temp->prox)
+    Celula *procura_se;
+    for (procura_se = list->prim; procura_se != NULL; procura_se = procura_se->prox)
     {
-        if (getId(temp->dado) == id)
+        if (getId(procura_se->dado) == id)
         {
-            return temp;
+            return procura_se;
         }
     }
     return NULL;
@@ -77,14 +77,91 @@ void *retiraDaLista(Lista *list, int id, int tipo)
     Celula *procura_se;
     if (tipo == LIVRO)
     {
-        procura_se = buscaNaLista(list, id, getIdLivro);
+        procura_se = buscaNaLista(list, id, getIdLivro);  
     }
     else if (tipo == LEITOR)
     {
         procura_se = buscaNaLista(list, id, getIdLeitor);
     }
-
-    return NULL;
+if (procura_se == NULL)
+    {
+        return NULL;
+    }
+    if (procura_se == list->prim && procura_se == list->ult)
+    {
+        list->prim = list->ult = NULL;
+        void *dado = procura_se->dado;
+        free(procura_se);
+        return dado;
+    }
+    if (procura_se == list->prim)
+    {
+        list->prim = procura_se->prox;
+        list->prim->ant = NULL;
+         void *dado = procura_se->dado;
+        free(procura_se);
+        return dado;
+    }
+    if (procura_se == list->ult)
+    {
+        list->ult->ant->prox=NULL;
+        list->ult=list->ult->ant;
+         void *dado = procura_se->dado;
+        free(procura_se);
+        return dado;
+    }
+    else
+    {
+  procura_se->ant->prox=procura_se->prox;
+  procura_se->prox->ant=procura_se->ant;
+   void *dado = procura_se->dado;
+        free(procura_se);
+        return dado;
+    }
 }
 
-void liberaLista(Lista *list);
+void imprimeLista(Lista *list, int tipo){
+    Celula *temp = list->prim;
+    while (temp != NULL)
+    {
+  if (tipo == LIVRO)
+    {
+      printf(" %s", getTituloLivro(temp->dado));
+        if (temp != list->ult)
+        {
+            printf(",");
+        }
+        else
+        {
+            printf("\n");
+        }
+    }else if(tipo == AFINIDADES){
+        printf(" %s", getNomeLeitor(temp->dado));
+        if (temp != list->ult)
+        {
+            printf(",");
+        }
+        else
+        {
+            printf("\n");
+        }
+    }
+    else if(tipo == LEITOR){
+       imprimeLeitor(temp->dado);
+       printf("\n");
+    }
+        temp = temp->prox;
+    }
+}
+void liberaLista(Lista *list){
+  Celula *temp = list->prim;
+    Celula *prox;            
+while (temp != NULL) {
+        prox = temp->prox;
+        free(temp);             
+        temp = prox;      
+    }
+    list->prim = NULL;
+    list->ult = NULL;
+    free(list);
+}
