@@ -1,7 +1,8 @@
 // livro.h
 // Definição do TAD livro
-// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté Carvalho Trento
-// Parte do trabalho 1 da disciplina Estutura de Dados, lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
+// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté
+// Carvalho Trento Parte do trabalho 1 da disciplina Estutura de Dados,
+// lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
 
 #ifndef livro_h
 #define livro_h
@@ -27,12 +28,14 @@ typedef struct livro Livro;
  * @param genero Genero do livro
  * @return A estrutura Livro corretamente alocada e inicializada
  */
-Livro *criaLivro(int id, int ano_publi, char *titulo, char *autor, char *genero);
+Livro *criaLivro(int id, int ano_publi, char *titulo, char *autor,
+                 char *genero);
 
 /**
  * @brief Lê uma única estrutura do tipo Livro, e a cria usando criaLivro
  * @param fLivro Ponteiro para o arquivo do qual se deve ler o livro
- * @param foi_lido váriável que guarda o retorno do fscanf para uso na leitura de arquivos
+ * @param foi_lido váriável que guarda o retorno do fscanf para uso na leitura
+ * de arquivos
  * @return A estrutura Livro corretamente lida e criada
  */
 Livro *leLivro(FILE *fLivro, int *foi_lido);
@@ -76,6 +79,6 @@ char *getTituloLivro(void *memorias_vividas_de_bras_cubos);
  * @brief Libera o livro da memoria, desalocando todos os atributos necessários
  * @param perseu_jaquin O livro
  */
-void liberaLivro(Livro *perseu_jaquin);
+void liberaLivro(void *perseu_jaquin);
 
 #endif

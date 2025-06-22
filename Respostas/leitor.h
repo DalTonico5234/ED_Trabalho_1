@@ -9,7 +9,6 @@
 
 #include "lista.h"
 #include "livro.h"
-#include "recomendacao.h"
 #include "uteis.h"
 /**
  * Estrutura do tipo Leitor, contendo:
@@ -22,6 +21,7 @@
  *  lista de recomendações
  *  lista de afinidadas
  */
+typedef struct recomendacao Recomendacao;
 typedef struct Leitor Leitor;
 
 /**
@@ -32,7 +32,8 @@ typedef struct Leitor Leitor;
  * @param npref Número de preferências
  * @return A estrutura Livro corretamente alocada e inicializada
  */
-Leitor *criaLeitor(int id, char *nome, char preferencias[][200], int npref);
+Leitor *criaLeitor(int id, char *nome, char preferencias[][MAX_STRING],
+                   int npref);
 
 /**
  * @brief Lê uma única estrutura do tipo Leitor, e a cria usando criaLeitor
@@ -78,11 +79,11 @@ void adicionarLidos(Leitor *lei, Livro *liv);
 void adicionarDesejos(Leitor *lei, Livro *liv);
 
 /**
- * @brief Realiza a recomendação de um leitor para o outro
- * @param lei leitor que recomenda
- * @param liv livro que foi recomendado
+ * @brief adiciona uma recomendação à lista de recomendações de um leitor
+ * @param lei leitor que recebeu a recomendação
+ * @param rec recomendação recebida
  */
-void recomendarLivro(Leitor *lei, Livro *liv);
+void recomendarLivro(Leitor *lei, Recomendacao *Rec);
 
 /**
  * @brief Verifica a resposta à recomendação e faz os ajustes caso seja aceita
@@ -110,6 +111,6 @@ void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
  * @brief Libera o leitor da memoria, desalocando todos os atributos necessários
  * @param lei O leitor
  */
-void liberaLeitor(Leitor *lei);
+void liberaLeitor(void *le);
 
 #endif

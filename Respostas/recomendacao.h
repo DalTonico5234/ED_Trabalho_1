@@ -7,16 +7,15 @@
 #ifndef recomendacao_h
 #define recomendacao_h
 
-#include "leitor.h"
 #include "livro.h"
 #include "uteis.h"
-
 /**
  * Estrutura do tipo Recomendacao, contendo:
  *  leitor que recomenda
  *  livro recomendado
  *  leitor que recebe a recomendacao
  */
+typedef struct Leitor Leitor;
 typedef struct recomendacao Recomendacao;
 
 /**
@@ -28,14 +27,14 @@ typedef struct recomendacao Recomendacao;
  * @return  A estrutura Recomendacao corretamente alocada e inicializada
  */
 Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao,
-                               Leitor *sei_nao);
+                               Leitor *sei_nao, int id);
 
 /**
  * @brief Obtém o nome do livro de determinada recomendacao
  * @param faz_exercicio_po uma recomendacao
  * @return Nome do livro de faz_exercicio_po
  */
-char *getLivroRecomendado(Recomendacao *faz_exercicio_po);
+char *getLivroRecomendado(void *faz_exercicio_po);
 
 /**
  * @brief Imprime a mensagem da recomendação no momento que ela é feita
@@ -54,7 +53,9 @@ void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno);
  * @brief Libera a recomendacao da memoria, desalocando apenas ela mesma
  * @param ajeita_a_postura_po uma recomendacao
  */
-void liberaRecomendacao(Recomendacao *ajeita_a_postura_po);
+void liberaRecomendacao(void *ajeita_a_postura_po);
 
 Livro *retornaLivroRecomendado(Recomendacao *rec);
+
+int getIdRecomendacao(void *rec);
 #endif

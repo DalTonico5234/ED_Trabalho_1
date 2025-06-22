@@ -5,7 +5,7 @@
 // lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
 
 #include "leitor.h"
-
+#include "recomendacao.h"
 struct Leitor {
   char *nome;
   int id;
@@ -94,7 +94,7 @@ void imprimeLeitor(void *leis) {
   printf("Desejados:");
   imprimeLista(lei->desejados, LIVRO);
   printf("Recomendacoes:");
-  imprimeLista(lei->recomendacoes, LIVRO);
+  imprimeLista(lei->recomendacoes, RECOMENDACAO);
   printf("Afinidades:\n");
   imprimeLista(lei->afinidades, AFINIDADES);
 }
@@ -108,14 +108,13 @@ void adicionarDesejos(Leitor *lei, Livro *liv) {
 }
 
 // LEMBRETE: AJUSTAR APÓS TAD RECOMENDACOES
-void recomendarLivro(Leitor *lei, Livro *liv) {
-  insereNaLista(lei->recomendacoes, liv, LIVRO);
+void recomendarLivro(Leitor *lei, Recomendacao *Rec) {
+  insereNaLista(lei->recomendacoes, Rec, RECOMENDACAO);
 }
 
 // LEMBRETE: AJUSTAR APÓS TAD RECOMENDACOES
 void removerRecomendacao(Leitor *lei, Recomendacao *Rec) {
-  retiraDaLista(lei->recomendacoes, getIdLivro(retornaLivroRecomendado(Rec)),
-                LIVRO);
+  retiraDaLista(lei->recomendacoes, getIdRecomendacao(Rec), RECOMENDACAO);
 }
 
 // LEMBRETE: AJUSTAR APÓS TAD RECOMENDACOES
@@ -130,14 +129,16 @@ void adicionarAfinidade(Leitor *destino, Leitor *afinidade) {
   insereNaLista(destino->afinidades, afinidade, LEITOR);
 }
 
-void liberaLeitor(Leitor *lei) {
+void liberaLeitor(void *le) {
+  Leitor *lei = (Leitor *)le;
   free(lei->nome);
   for (int i = 0; i < lei->npref; i++) {
     free(lei->preferencias[i]);
   }
   free(lei->preferencias);
-  liberaLista(lei->lidos);
-  liberaLista(lei->recomendacoes);
-  liberaLista(lei->desejados);
+  liberaLista(lei->lidos, 0);
+  liberaLista(lei->recomendacoes, 1);
+  liberaLista(lei->desejados, 0);
+  liberaLista(lei->afinidades, 0);
   free(lei);
 }

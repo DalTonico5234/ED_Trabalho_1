@@ -9,8 +9,8 @@
 
 #include "leitor.h"
 #include "livro.h"
+#include "recomendacao.h"
 #include "uteis.h"
-
 /**
  * Estrutura do tipo Lista (duplamente encadeada e genérica/heterogênea),
  * contendo: sentila:
@@ -55,6 +55,6 @@ void imprimeLista(Lista *list, int tipo);
  * inseridos nela
  * @param list lista que será liberada
  */
-void liberaLista(Lista *list);
+void liberaLista(Lista *list, int tipo);
 
 #endif

@@ -14,8 +14,7 @@ int main(int argc, char *argv[]) {
   strcpy(caminho_Leitor, argv[argc - 1]);
   strcat(caminho_Leitor, "leitores.txt");
   FILE *fLeitor = fopen(caminho_Leitor, "r");
-
-  Leitor *Leitors[3];
+  Lista *leitores = criaLista();
   char primeira_linha[MAX_STRING];
   int x = fscanf(fLeitor, "%[^\n]\n", primeira_linha);
   if (x == EOF) {
@@ -23,16 +22,10 @@ int main(int argc, char *argv[]) {
   }
   int foi_lido;
   for (int i = 0; i < 3; i++) {
-    Leitors[i] = leLeitor(fLeitor, &foi_lido);
+    Leitor *leitor = leLeitor(fLeitor, &foi_lido);
+    insereNaLista(leitores, leitor, LEITOR);
   }
-  int j;
-  for (j = 0; j < 3; j++) {
-    imprimeLeitor(Leitors[j]);
-  }
-
-  for (j = 0; j < 3; j++) {
-    liberaLeitor(Leitors[j]);
-  }
-
+  imprimeLista(leitores, LEITOR);
+  liberaLista(leitores, 1);
   fclose(fLeitor);
 }
