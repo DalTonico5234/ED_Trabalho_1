@@ -1,19 +1,19 @@
 // lista.h
 // Definição do TAD lista
-// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté Carvalho Trento
-// Parte do trabalho 1 da disciplina Estutura de Dados, lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
+// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté
+// Carvalho Trento Parte do trabalho 1 da disciplina Estutura de Dados,
+// lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
 
 #ifndef lista_h
 #define lista_h
 
-#include "lista.h"
-#include "livro.h"
 #include "leitor.h"
+#include "livro.h"
 #include "uteis.h"
 
 /**
- * Estrutura do tipo Lista (duplamente encadeada e genérica/heterogênea), contendo:
- *  sentila:
+ * Estrutura do tipo Lista (duplamente encadeada e genérica/heterogênea),
+ * contendo: sentila:
  *  - prim
  *  - ult
  */
@@ -43,14 +43,16 @@ void insereNaLista(Lista *list, void *dado, int tipo);
 void *retiraDaLista(Lista *list, int id, int tipo);
 
 /**
- * @brief Imprime uma string específica de cado elemento da lista, conforme seu tipo
+ * @brief Imprime uma string específica de cado elemento da lista, conforme seu
+ * tipo
  * @param list lista que será impressa
  * @param tipo tipo dos elementos da lista
  */
 void imprimeLista(Lista *list, int tipo);
 
 /**
- * @brief Libera toda a memória alocada para a lista, mas NÃO libera os dados inseridos nela
+ * @brief Libera toda a memória alocada para a lista, mas NÃO libera os dados
+ * inseridos nela
  * @param list lista que será liberada
  */
 void liberaLista(Lista *list);

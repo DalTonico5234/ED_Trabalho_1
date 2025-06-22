@@ -1,15 +1,16 @@
 // leitor.h
 // Definição do TAD Leitor
-// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté Carvalho Trento
-// Parte do trabalho 1 da disciplina Estutura de Dados, lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
+// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté
+// Carvalho Trento Parte do trabalho 1 da disciplina Estutura de Dados,
+// lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
 
 #ifndef leitor_h
 #define leitor_h
 
 #include "lista.h"
 #include "livro.h"
+#include "recomendacao.h"
 #include "uteis.h"
-
 /**
  * Estrutura do tipo Leitor, contendo:
  *  id
@@ -31,12 +32,13 @@ typedef struct Leitor Leitor;
  * @param npref Número de preferências
  * @return A estrutura Livro corretamente alocada e inicializada
  */
-Leitor *criaLeitor(int id, char* nome, char preferencias[][200], int npref);
+Leitor *criaLeitor(int id, char *nome, char preferencias[][200], int npref);
 
 /**
  * @brief Lê uma única estrutura do tipo Leitor, e a cria usando criaLeitor
  * @param fLivro Ponteiro para o arquivo do qual se deve ler o Leitor
- * @param foi_lido váriável que guarda o retorno do fscanf para uso na leitura de arquivos
+ * @param foi_lido váriável que guarda o retorno do fscanf para uso na leitura
+ * de arquivos
  * @return A estrutura Leitor corretamente lida e criada
  */
 Leitor *leLeitor(FILE *fLeitor, int *foi_lido);
@@ -53,7 +55,7 @@ int getIdLeitor(void *lei);
  * @param lei O leitor
  * @return nome de lei
  */
-char* getNomeLeitor(void *lei);
+char *getNomeLeitor(void *lei);
 
 /**
  * @brief Imprime um leitor e todos seus atributos
@@ -88,14 +90,14 @@ void recomendarLivro(Leitor *lei, Livro *liv);
  * @param liv livro que foi recomendado
  * @param yesno resposta à recomendação (aceita ou recusa)
  */
-void processarRecomendacao(Leitor *lei, Livro *liv, int yesno);
+void processarRecomendacao(Leitor *lei, Recomendacao *Rec, int yesno);
 
 /**
  * @brief Remove a recomendação da lista
  * @param lei leitor que tem a recomendação
  * @param liv livro que foi recomendado
  */
-void removerRecomendacao(Leitor *lei, Livro *liv);
+void removerRecomendacao(Leitor *lei, Recomendacao *Rec);
 
 /**
  * @brief Adiciona determinado leitor à lista de afinidades de outro

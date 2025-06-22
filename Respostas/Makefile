@@ -1,4 +1,4 @@
-all: 
+all: compile
 
 compile:
 	gcc *.c -c -Wall -Wextra -Werror
@@ -45,7 +45,7 @@ diff3:
 
 test0: compile clean debug_run0
 
-test1: compile clean debug_run1
+test1: compile clean debug_run1S
 
 test2: compile clean debug_run2
 
