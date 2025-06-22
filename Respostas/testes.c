@@ -1,8 +1,12 @@
+// testes.c
+// Código para testes gerais da funcionalidades do trabalho
+// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté Carvalho Trento
+// Parte do trabalho 1 da disciplina Estutura de Dados, lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
+
 #include "livro.h"
+#include "leitor.h"
+#include "lista.h"
 #include "uteis.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 int main(int argc, char *argv[])
 {

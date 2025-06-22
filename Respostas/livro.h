@@ -1,11 +1,12 @@
+// livro.h
+// Definição do TAD livro
+// Criado e desenvolvido por Leonardo Cheregati de Oliveira Roxo e Matteo Chisté Carvalho Trento
+// Parte do trabalho 1 da disciplina Estutura de Dados, lecionada por Patricia Dockhorn Costa, da UFES, no período 2025/1
 
 #ifndef livro_h
 #define livro_h
 
 #include "uteis.h"
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
  * Estrutura do tipo Livro, contendo:
