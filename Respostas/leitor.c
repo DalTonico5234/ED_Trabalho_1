@@ -74,7 +74,13 @@ char *getNomeLeitor(void *lei)
 
 void imprimeLeitor(void *leis)
 {
+    if (!leis)
+    {
+        printf("ERRO em ponteiro de leitor\n");
+        return;
+    }
     Leitor *lei = (Leitor *)leis;
+
     printf("Leitor: %s\n", lei->nome);
     printf("Lidos:");
     imprimeLista(lei->lidos, LIVRO);
