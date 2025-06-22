@@ -10,32 +10,32 @@
 
 int main(int argc, char *argv[])
 {
-    char caminho_livro[MAX_STRING];
-    strcpy(caminho_livro, argv[argc-1]);
-    strcat(caminho_livro, "livros.txt");
-    FILE *fLivro = fopen(caminho_livro, "r");
+    char caminho_Leitor[MAX_STRING];
+    strcpy(caminho_Leitor, argv[argc-1]);
+    strcat(caminho_Leitor, "leitores.txt");
+    FILE *fLeitor = fopen(caminho_Leitor, "r");
 
-    Livro *livros[15];
+    Leitor *Leitors[3];
     char primeira_linha[MAX_STRING];
-    fscanf(fLivro, "%[^\n]\n", primeira_linha);
+    fscanf(fLeitor, "%[^\n]\n", primeira_linha);
     int foi_lido;
     int i=0;
     do
     {
-        livros[i] = leLivro(fLivro, &foi_lido);
+        Leitors[i] = leLeitor(fLeitor, &foi_lido);
         i++;
     } while (foi_lido != EOF);
 
     int j;
     for (j=0; j < i-1; j++)
     {
-        printf("%d;%s;%s;%s;%d\n", getIdLivro(livros[j]), getTituloLivro(livros[j]), getAutorLivro(livros[j]), getGeneroLivro(livros[j]), getAnoPubliLivro(livros[j]));
+        imprimeLeitor(Leitors[i]);
     }
 
     for (j=0; j < i; j++)
     {
-        liberaLivro(livros[j]);
+        liberaLeitor(Leitors[j]);
     }
 
-    fclose(fLivro);
+    fclose(fLeitor);
 }

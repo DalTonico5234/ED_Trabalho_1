@@ -45,7 +45,7 @@ Leitor *leLeitor(FILE *fLeitor, int *foi_lido)
     char preferencias[npref][MAX_STRING];
     for (int i = 0; i < npref; i++)
     {
-        *foi_lido2 = fscanf(fLeitor, "%200[^;\n]", preferencias[i]);
+        *foi_lido2 = fscanf(fLeitor, "%200[^;\n];", preferencias[i]);
     }
     Leitor *lelei = criaLeitor(id, nome, preferencias, npref);
 
@@ -133,7 +133,7 @@ void adicionarAfinidade(Leitor *destino, Leitor *afinidade)
     insereNaLista(destino->afinidades, afinidade, LEITOR);
 }
 
-void desalocaLeitor(Leitor *lei)
+void liberaLeitor(Leitor *lei)
 {
     free(lei->nome);
     for (int i = 0; i < lei->npref; i++)

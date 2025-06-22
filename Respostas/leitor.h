@@ -104,4 +104,10 @@ void removerRecomendacao(Leitor *lei, Livro *liv);
  */
 void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
 
+/**
+ * @brief Libera o leitor da memoria, desalocando todos os atributos necessários
+ * @param lei O leitor
+ */
+void liberaLeitor(Leitor *lei);
+
 #endif
