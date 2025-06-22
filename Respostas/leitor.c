@@ -13,7 +13,7 @@ struct Leitor
     Lista *afinidades;
 };
 
-Leitor *criaLeitor(int id, char *nome, char preferencias[][200], int npref)
+Leitor *criaLeitor(int id, char *nome, char preferencias[][MAX_STRING], int npref)
 {
     Leitor *lei = (Leitor *)malloc(sizeof(Leitor));
     lei->id = id;
@@ -31,6 +31,23 @@ Leitor *criaLeitor(int id, char *nome, char preferencias[][200], int npref)
     return lei;
 }
 
+Leitor *leLeitor(FILE *fLeitor, int *foi_lido)
+{
+    int id;
+    int npref;
+    char nome[MAX_STRING] = "a";
+    int *foi_lido2 = 0;
+    *foi_lido = fscanf(fLeitor, "%d;%[^;];%d;", &id, nome, &npref);
+    char preferencias[npref][MAX_STRING];
+    for (int i = 0; i < npref; i++)
+    {
+        *foi_lido2 = fscanf(fLeitor, "%200[^;\n]", preferencias[i]);
+    }
+    Leitor *lelei = criaLeitor(id, nome, preferencias, npref);
+
+    return lelei;
+}
+
 int getIdLeitor(void *lei)
 {
     if (!lei)
@@ -38,23 +55,35 @@ int getIdLeitor(void *lei)
         printf("ERRO em ponteiro de leitor\n");
         return -1;
     }
-    
-    Leitor *reader = (Leitor *) lei;
+
+    Leitor *reader = (Leitor *)lei;
     return reader->id;
+}
+
+char *getNomeLeitor(void *lei)
+{
+    if (!lei)
+    {
+        printf("ERRO em ponteiro de leitor\n");
+        return NULL;
+    }
+
+    Leitor *le = (Leitor *)lei;
+    return le->nome;
 }
 
 void imprimeLeitor(void *leis)
 {
-Leitor *lei = (Leitor*) leis;
+    Leitor *lei = (Leitor *)leis;
     printf("Leitor: %s\n", lei->nome);
     printf("Lidos:");
-    imprimeLista(lei->lidos,LIVRO);
+    imprimeLista(lei->lidos, LIVRO);
     printf("Desejados:");
-    imprimeLista(lei->desejados,LIVRO);
+    imprimeLista(lei->desejados, LIVRO);
     printf("Recomendacoes:");
-    imprimeLista(lei->recomendacoes,LIVRO);
+    imprimeLista(lei->recomendacoes, LIVRO);
     printf("Afinidades:\n");
-    imprimeLista(lei->afinidades,AFINIDADES);
+    imprimeLista(lei->afinidades, AFINIDADES);
 }
 
 void adicionarLidos(Leitor *lei, Livro *liv)
@@ -67,16 +96,19 @@ void adicionarDesejos(Leitor *lei, Livro *liv)
     insereNaLista(lei->desejados, liv, LIVRO);
 }
 
+//LEMBRETE: AJUSTAR APÓS TAD RECOMENDACOES
 void recomendarLivro(Leitor *lei, Livro *liv)
 {
     insereNaLista(lei->recomendacoes, liv, LIVRO);
 }
 
+//LEMBRETE: AJUSTAR APÓS TAD RECOMENDACOES
 void removerRecomendacao(Leitor *lei, Livro *liv)
 {
     retiraDaLista(lei->recomendacoes, getIdLivro(liv), LIVRO);
 }
 
+//LEMBRETE: AJUSTAR APÓS TAD RECOMENDACOES
 void processarRecomendacao(Leitor *lei, Livro *liv, int yesno)
 {
     if (yesno == 1)
@@ -84,6 +116,11 @@ void processarRecomendacao(Leitor *lei, Livro *liv, int yesno)
         adicionarDesejos(lei, liv);
     }
     removerRecomendacao(lei, liv);
+}
+
+void adicionarAfinidade(Leitor *destino, Leitor *afinidade)
+{
+    insereNaLista(destino->afinidades, afinidade, LEITOR);
 }
 
 void desalocaLeitor(Leitor *lei)
@@ -99,28 +136,3 @@ void desalocaLeitor(Leitor *lei)
     liberaLista(lei->desejados);
     free(lei);
 }
-
-char* getNomeLeitor(void *lei){
-    Leitor *le = (Leitor*) lei;
-    return le->nome;
-}
-
-void adicionarAfinidade(Leitor *destino, Leitor *afinidade){
-    insereNaLista(destino->afinidades, afinidade, LEITOR);
-}
-
-Leitor *leLeitor(FILE *fLeitor, int *foi_lido){
-    int id;
-    int npref;
-    char nome[MAX_STRING] = "a";
-int *foi_lido2;
-    *foi_lido = fscanf(fLeitor, "%d;%[^;];%d;", &id, nome, &npref);
-     char preferencias[npref][MAX_STRING];
-for(int i=0;i<npref;i++){
-  *foi_lido2 = fscanf(fLeitor, "%200[^;\n]",preferencias[i]);
-}
-    Leitor *lelei = criaLeitor(id, nome, preferencias, npref);
-
-    return lelei;
-}
-

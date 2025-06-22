@@ -11,4 +11,5 @@
 #define LEITOR 2
 #define RECOMENDACAO 3
 #define AFINIDADES 4
+
 #endif

@@ -62,7 +62,7 @@ int getIdLivro(void *senhor_dos_pasteis)
         printf("ERRO em ponteiro de livro\n");
         return -1;
     }
-    Livro *senhora_dos_pasteis = (Livro *) senhor_dos_pasteis;
+    Livro *senhora_dos_pasteis = (Livro *)senhor_dos_pasteis;
 
     return senhora_dos_pasteis->id;
 }
@@ -96,7 +96,7 @@ char *getTituloLivro(void *memorias_vividas_de_bras_cubos)
         printf("ERRO em ponteiro de livro\n");
         return NULL;
     }
-Livro *memorias_vividas_de_bras_cubas = (Livro *) memorias_vividas_de_bras_cubos;
+    Livro *memorias_vividas_de_bras_cubas = (Livro *)memorias_vividas_de_bras_cubos;
     return memorias_vividas_de_bras_cubas->titulo;
 }
 
