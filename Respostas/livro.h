@@ -53,7 +53,7 @@ int getIdLivro(void *senhor_dos_pasteis);
 
 /**
  * @brief Obtém o genero do livro
- * @param book O livro
+ * @param vidas_molhadas O livro
  * @return genero de book
  */
 char *getAutorLivro(Livro *vidas_molhadas);

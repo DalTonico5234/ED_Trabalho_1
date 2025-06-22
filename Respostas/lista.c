@@ -33,7 +33,7 @@ Lista *criaLista()
     return list;
 }
 
-void insereNaLista(Lista *list, void *dado, int tipo)
+void insereNaLista(Lista *list, void *dado, int tipo) //no final
 {
     if (!list)
     {
