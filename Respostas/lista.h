@@ -11,6 +11,9 @@
 #include "livro.h"
 #include "recomendacao.h"
 #include "uteis.h"
+
+typedef int (*fGetIdDado)(void *);
+
 /**
  * Estrutura do tipo Lista (duplamente encadeada e genérica/heterogênea),
  * contendo: sentila:
@@ -32,6 +35,15 @@ Lista *criaLista();
  * @param tipo tipo do dado
  */
 void insereNaLista(Lista *list, void *dado, int tipo);
+
+/**
+ * @brief Busca determinado dado em uma lista, de qualquer tipo
+ * @param list lista onde será inserido
+ * @param id identificador único do elemento que será retirado
+ * @param getId função que retorna id do tipo de dado que está sendo procurado
+ * @return Dado com id encontrado em list, NULL caso não seja encontrado
+ */
+void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId);
 
 /**
  * @brief Retira determinado elemento da lista, conforme seu tipo

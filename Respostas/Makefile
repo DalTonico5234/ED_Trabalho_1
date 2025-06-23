@@ -20,16 +20,16 @@ run3:
 	./main ../Casos/test3/
 
 debug_run0:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test0/
+	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test0/
 
 debug_run1:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test1/
+	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test1/
 
 debug_run2:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test2/
+	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test2/
 
 debug_run3:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test3/
+	valgrind --track-origins=yes --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test3/
 
 diff0:
 	diff ../Casos/test0/saida.txt ../Casos/test0/gabarito.txt

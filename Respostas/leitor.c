@@ -42,11 +42,14 @@ Leitor *leLeitor(FILE *fLeitor, int *foi_lido)
   int npref = 1;
   char nome[MAX_STRING] = "a";
   *foi_lido = fscanf(fLeitor, "%d;%[^;];%d;", &id, nome, &npref);
+  if (*foi_lido == EOF)
+  {
+    return NULL;
+  }
   if (*foi_lido == 0)
   {
     printf("ERRO ao ler arquivo de leitores\n");
   }
-  printf("id lido: %d; nome lido: %s; npref lido: %d;\n", id, nome, npref);
   char preferencias[npref][MAX_STRING];
   for (int i = 0; i < npref; i++)
   {
@@ -57,12 +60,14 @@ Leitor *leLeitor(FILE *fLeitor, int *foi_lido)
     if (i != (npref - 1))
     {
       *foi_lido = fscanf(fLeitor, "%200[^;];", preferencias[i]);
-      printf("preferencia lida: %s\n", preferencias[i]);
     }
     else
     {
       *foi_lido = fscanf(fLeitor, "%200[^\n]\n", preferencias[i]);
-      printf("preferencia lida: %s\n", preferencias[i]);
+    }
+    if (*foi_lido == EOF)
+    {
+      return NULL;
     }
   }
 

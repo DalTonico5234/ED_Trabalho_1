@@ -8,8 +8,6 @@
 
 typedef struct celula Celula;
 
-typedef int (*fGetIdDado)(void *);
-
 struct celula {
   Celula *prox;
   Celula *ant;
@@ -64,6 +62,16 @@ static Celula *buscaNaLista(Lista *list, int id, fGetIdDado getId) {
     }
   }
   return NULL;
+}
+
+void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId)
+{
+  Celula *procura_se = buscaNaLista(list, id, getId);
+  if (procura_se == NULL)
+  {
+    return NULL;
+  }
+  return procura_se->dado;
 }
 
 void *retiraDaLista(Lista *list, int id, int tipo) {

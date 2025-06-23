@@ -53,6 +53,25 @@ bookED *criabookED(char *caminho_comum)
         }
     } while (foi_lido != EOF);
 
+    Leitor *leia;
+    fscanf(fLeitores, "%[^\n]\n", primeira_linha);
+    do
+    {
+        leia = leLeitor(fLeitores, &foi_lido);
+        if (leia != NULL)
+        {
+            if (foi_lido == EOF)
+            {
+                liberaLeitor(leia);
+            }
+            else
+            {
+                insereNaLista(library->leitores, leia, LEITOR);
+            }
+        }
+
+    } while (foi_lido != EOF);
+
     fclose(fLivros);
     fclose(fLeitores);
 
@@ -68,6 +87,7 @@ void executabookED(bookED *alexandria)
 void imprimebookED(bookED *cairo)
 {
     imprimeLista(cairo->livros, LIVRO, cairo->fSaida);
+    imprimeLista(cairo->leitores, LEITOR, cairo->fSaida);
 }
 
 void liberabookED(bookED *leitura)
