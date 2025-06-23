@@ -39,19 +39,21 @@ char *getLivroRecomendado(void *faz_exercicio_po);
 /**
  * @brief Imprime a mensagem da recomendação no momento que ela é feita
  * @param drome_mais_po uma recomendacao
+ * @param fSaida ponteiro para o arquivo saidas.txt
  */
-void imprimeRecomendacaoFeita(Recomendacao *drome_mais_po);
+void imprimeRecomendacaoFeita(Recomendacao *drome_mais_po, FILE *fSaida);
 
 /**
  * @brief Imprime a mensagem da recomendação, caso ela tenha sido aceita
  * @param bebe_agua_po uma recomendacao
  * @param yesno resposta à recomendacao
  */
-void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno);
+void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno, FILE *fSaida);
 
 /**
  * @brief Libera a recomendacao da memoria, desalocando apenas ela mesma
  * @param ajeita_a_postura_po uma recomendacao
+ * @param fSaida ponteiro para o arquivo saidas.txt
  */
 void liberaRecomendacao(void *ajeita_a_postura_po);
 

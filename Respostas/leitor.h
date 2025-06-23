@@ -11,6 +11,8 @@
 #include "livro.h"
 #include "uteis.h"
 
+typedef struct recomendacao Recomendacao;
+
 /**
  * Estrutura do tipo Leitor, contendo:
  *  id
@@ -22,7 +24,6 @@
  *  lista de recomendações
  *  lista de afinidadas
  */
-typedef struct recomendacao Recomendacao;
 typedef struct Leitor Leitor;
 
 /**
@@ -62,8 +63,9 @@ char *getNomeLeitor(void *lei);
 /**
  * @brief Imprime um leitor e todos seus atributos
  * @param leis leitor a ser impresso
+ * @param fSaida ponteiro para o arquivo saidas.txt
  */
-void imprimeLeitor(void *leis);
+void imprimeLeitor(void *leis, FILE *fSaida);
 
 /**
  * @brief Adiciona determinado livro à lista de lidos de um leitor

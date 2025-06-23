@@ -20,28 +20,28 @@ run3:
 	./main ../Casos/test3/
 
 debug_run0:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test0/ >saida.txt
+	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test0/
 
 debug_run1:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test1/ >saida.txt
+	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test1/
 
 debug_run2:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test2/ >saida.txt
+	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test2/
 
 debug_run3:
-	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test3/ >saida.txt
+	valgrind --leak-check=full --show-leak-kinds=all -s ./main ../Casos/test3/
 
 diff0:
-	diff ../Casos/test0/saida.txt saida.txt
+	diff ../Casos/test0/saida.txt ../Casos/test0/gabarito.txt
 
 diff1:
-	diff ../Casos/test1/saida.txt saida.txt
+	diff ../Casos/test1/saida.txt ../Casos/test1/gabarito.txt
 
 diff2:
-	diff ../Casos/test2/saida.txt saida.txt
+	diff ../Casos/test2/saida.txt ../Casos/test2/gabarito.txt
 
 diff3:
-	diff ../Casos/test3/saida.txt saida.txt
+	diff ../Casos/test3/saida.txt ../Casos/test3/gabarito.txt
 
 test0: compile clean debug_run0
 

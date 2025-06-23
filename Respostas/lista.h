@@ -47,8 +47,9 @@ void *retiraDaLista(Lista *list, int id, int tipo);
  * tipo
  * @param list lista que será impressa
  * @param tipo tipo dos elementos da lista
+ * @param fSaida ponteiro para o arquivo saidas.txt
  */
-void imprimeLista(Lista *list, int tipo);
+void imprimeLista(Lista *list, int tipo, FILE *fSaida);
 
 /**
  * @brief Libera toda a memória alocada para a lista, mas NÃO libera os dados

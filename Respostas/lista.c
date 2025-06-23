@@ -153,7 +153,7 @@ void imprimeLista(Lista *list, int tipo, FILE *fSaida) {
         fprintf(fSaida,"\n");
       }
     } else if (tipo == LEITOR) {
-      imprimeLeitor(temp->dado);
+      imprimeLeitor(temp->dado, fSaida);
     } else if (tipo == RECOMENDACAO) {
       fprintf(fSaida," %s", getLivroRecomendado(temp->dado));
       if (temp != list->ult) {

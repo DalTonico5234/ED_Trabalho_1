@@ -61,19 +61,19 @@ bookED *criabookED(char *caminho_comum)
 
 void executabookED(bookED *alexandria)
 {
-    printf("Criou com sucesso: olha:\n");
+    fprintf(alexandria->fSaida, "Criou com sucesso: olha:\n");
     imprimebookED(alexandria);
 }
 
 void imprimebookED(bookED *cairo)
 {
-    imprimeLista(cairo->livros, LIVRO);
+    imprimeLista(cairo->livros, LIVRO, cairo->fSaida);
 }
 
 void liberabookED(bookED *leitura)
 {
-    liberaLista(leitura->livros, LIVRO);
-    liberaLista(leitura->leitores, LEITOR);
+    liberaLista(leitura->livros, 1);
+    liberaLista(leitura->leitores, 1);
 
     fclose(leitura->fComandos);
     fclose(leitura->fSaida);
