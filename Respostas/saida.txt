@@ -1,26 +1,2 @@
-id lido: 1; nome lido: Alice; npref lido: 2;
-preferencia lida: Romance
-preferencia lida:  Terror
-id lido: 2; nome lido: Bob; npref lido: 2;
-preferencia lida: Terror
-preferencia lida: Mistério
-id lido: 3; nome lido: Clara; npref lido: 1;
-preferencia lida: Mistério
-Leitor: Alice
-Lidos:
-Desejados:
-Recomendacoes:
-Afinidades:
-
-Leitor: Bob
-Lidos:
-Desejados:
-Recomendacoes:
-Afinidades:
-
-Leitor: Clara
-Lidos:
-Desejados:
-Recomendacoes:
-Afinidades:
-
+Criou com sucesso: olha:
+ O Iluminado, Garota Exemplar, Orgulho e Preconceito, Drácula, Assassinato no Expresso Oriente, Como Eu Era Antes de Você, O Cão dos Baskervilles, A Culpa é das Estrelas, It: A Coisa, O Nome da Rosa, O Senhor dos Anéis: A Sociedade do Anel, 1984, Duna, As Vinhas da Ira, Steve Jobs, a

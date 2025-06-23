@@ -10,6 +10,7 @@
 #include "lista.h"
 #include "livro.h"
 #include "uteis.h"
+
 /**
  * Estrutura do tipo Leitor, contendo:
  *  id
@@ -111,6 +112,6 @@ void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
  * @brief Libera o leitor da memoria, desalocando todos os atributos necessários
  * @param lei O leitor
  */
-void liberaLeitor(void *le);
+void liberaLeitor(void *lei);
 
 #endif
