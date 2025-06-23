@@ -7,9 +7,9 @@
 #ifndef booked_h
 #define booked_h
 
-#include "recomendacao.h"
-#include "livro.h"
 #include "leitor.h"
+#include "livro.h"
+#include "recomendacao.h"
 #include "uteis.h"
 
 /**
@@ -31,5 +31,13 @@ void imprimebookED(bookED *cairo);
 
 void liberabookED(bookED *leitura);
 
+void adicionaLivroLido(bookED *alexandria, int id1, int id2);
 
+void adicionaLivroDesejado(bookED *alexandria, int id1, int id2);
+
+void recomendarLivroED(bookED *alexandria, int id1, int id2, int id3);
+
+void aceitarRecomendacao(bookED *alexandria, int id1, int id2, int id3);
+
+void rejeitarRecomendacao(bookED *alexandria, int id1, int id2, int id3);
 #endif

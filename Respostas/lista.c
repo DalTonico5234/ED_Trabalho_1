@@ -64,11 +64,9 @@ static Celula *buscaNaLista(Lista *list, int id, fGetIdDado getId) {
   return NULL;
 }
 
-void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId)
-{
+void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId) {
   Celula *procura_se = buscaNaLista(list, id, getId);
-  if (procura_se == NULL)
-  {
+  if (procura_se == NULL) {
     return NULL;
   }
   return procura_se->dado;
@@ -143,31 +141,31 @@ void *retiraDaLista(Lista *list, int id, int tipo) {
 void imprimeLista(Lista *list, int tipo, FILE *fSaida) {
   Celula *temp = list->prim;
   if (temp == NULL && tipo != LEITOR) {
-    fprintf(fSaida,"\n");
+    fprintf(fSaida, "\n");
   }
   while (temp != NULL) {
     if (tipo == LIVRO) {
-      fprintf(fSaida," %s", getTituloLivro(temp->dado));
+      fprintf(fSaida, " %s", getTituloLivro(temp->dado));
       if (temp != list->ult) {
-        fprintf(fSaida,",");
+        fprintf(fSaida, ",");
       } else {
-        fprintf(fSaida,"\n");
+        fprintf(fSaida, "\n");
       }
     } else if (tipo == AFINIDADES) {
-      fprintf(fSaida," %s", getNomeLeitor(temp->dado));
+      fprintf(fSaida, " %s", getNomeLeitor(temp->dado));
       if (temp != list->ult) {
-        fprintf(fSaida,",");
+        fprintf(fSaida, ",");
       } else {
-        fprintf(fSaida,"\n");
+        fprintf(fSaida, "\n");
       }
     } else if (tipo == LEITOR) {
       imprimeLeitor(temp->dado, fSaida);
     } else if (tipo == RECOMENDACAO) {
-      fprintf(fSaida," %s", getLivroRecomendado(temp->dado));
+      fprintf(fSaida, " %s", getLivroRecomendado(temp->dado));
       if (temp != list->ult) {
-        fprintf(fSaida,",");
+        fprintf(fSaida, ",");
       } else {
-        fprintf(fSaida,"\n");
+        fprintf(fSaida, "\n");
       }
     }
     temp = temp->prox;

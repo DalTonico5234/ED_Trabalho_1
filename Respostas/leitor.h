@@ -116,4 +116,6 @@ void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
  */
 void liberaLeitor(void *lei);
 
+Recomendacao *getRecomendacaoId(Leitor *lei, int id);
+
 #endif
