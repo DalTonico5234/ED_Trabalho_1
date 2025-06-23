@@ -6,7 +6,8 @@
 
 #include "recomendacao.h"
 #include "leitor.h"
-struct recomendacao {
+struct recomendacao
+{
   Leitor *le_isso_po;
   Livro *recomendacao;
   Leitor *sei_nao;
@@ -14,7 +15,8 @@ struct recomendacao {
 };
 
 Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao,
-                               Leitor *sei_nao, int id) {
+                               Leitor *sei_nao, int id)
+{
   Recomendacao *se_diverte_po = (Recomendacao *)malloc(sizeof(Recomendacao));
 
   se_diverte_po->le_isso_po = le_isso_po;
@@ -25,7 +27,8 @@ Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao,
   return se_diverte_po;
 }
 
-char *getLivroRecomendado(void *faz_exercicio) {
+char *getLivroRecomendado(void *faz_exercicio)
+{
   Recomendacao *faz_exercicio_po = (Recomendacao *)faz_exercicio;
 
   return getTituloLivro(faz_exercicio_po->recomendacao);
@@ -33,13 +36,15 @@ char *getLivroRecomendado(void *faz_exercicio) {
 
 Livro *retornaLivroRecomendado(Recomendacao *rec) { return rec->recomendacao; }
 
-int getIdRecomendacao(void *rec) {
+int getIdRecomendacao(void *rec)
+{
   Recomendacao *recomendacao = (Recomendacao *)rec;
 
   return recomendacao->id;
 }
 
-void imprimeRecomendacaoFeita(Recomendacao *drome_mais_po, FILE *fSaida) {
+void imprimeRecomendacaoFeita(Recomendacao *drome_mais_po, FILE *fSaida)
+{
   fprintf(fSaida, "%s recomenda \"%s\" para %s\n",
           getNomeLeitor(drome_mais_po->le_isso_po),
           getTituloLivro(drome_mais_po->recomendacao),
@@ -47,16 +52,21 @@ void imprimeRecomendacaoFeita(Recomendacao *drome_mais_po, FILE *fSaida) {
 }
 
 void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno,
-                               FILE *fSaida) {
-  if (bebe_agua_po == NULL) {
+                               FILE *fSaida)
+{
+  if (bebe_agua_po == NULL)
+  {
     printf("\n\n\ndeu pau aqui\n\n\n");
   }
-  if (yesno) {
+  if (yesno)
+  {
     fprintf(fSaida, "%s aceita recomendação \"%s\" de %s\n",
             getNomeLeitor(bebe_agua_po->sei_nao),
             getTituloLivro(bebe_agua_po->recomendacao),
             getNomeLeitor(bebe_agua_po->le_isso_po));
-  } else {
+  }
+  else
+  {
     fprintf(fSaida, "%s rejeita recomendação \"%s\" de %s\n",
             getNomeLeitor(bebe_agua_po->sei_nao),
             getTituloLivro(bebe_agua_po->recomendacao),
@@ -66,7 +76,8 @@ void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno,
   processarRecomendacao(bebe_agua_po->sei_nao, bebe_agua_po, yesno);
 }
 
-void liberaRecomendacao(void *ajeita_a_postura) {
+void liberaRecomendacao(void *ajeita_a_postura)
+{
   Recomendacao *ajeita_a_postura_po = (Recomendacao *)ajeita_a_postura;
 
   free(ajeita_a_postura_po);

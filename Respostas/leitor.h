@@ -118,4 +118,8 @@ void liberaLeitor(void *lei);
 
 Recomendacao *getRecomendacaoId(Leitor *lei, int id);
 
+Livro *getLivroLidoId(Leitor *lei, int id);
+
+Livro *getLivroDesejadoId(Leitor *lei, int id);
+
 #endif

@@ -1,92 +1,140 @@
-Criou com sucesso: olha:
- Dom Casmurro, O Alienista, Capitães da Areia, O Tempo e o Vento, Vaga Música, O Coruja, A Droga da Obediência, O Hobbit, Robinson Crusoé, O Nome da Rosa, Triste Fim de Policarpo Quaresma, Auto da Barca do Inferno, Casa-Grande & Senzala, Minha Vida de Menina, O Guarani, Admirável Mundo Novo, O Senhor dos Anéis, As Aventuras de Tom Sawyer, E Não Sobrou Nenhum, A Cartomante
+Amanda leu "Dom Casmurro"
+Amanda leu "O Alienista"
+Bruno leu "O Nome da Rosa"
+Carla leu "Capitães da Areia"
+Diego leu "O Coruja"
+Elena leu "A Droga da Obediência"
+Felipe leu "O Hobbit"
+Gabriela leu "O Tempo e o Vento"
+Henrique leu "Vaga Música"
+Isabela leu "E Não Sobrou Nenhum"
+João leu "Robinson Crusoé"
+Karen leu "Triste Fim de Policarpo Quaresma"
+Leonardo leu "O Guarani"
+Mariana leu "Admirável Mundo Novo"
+Nicolas leu "O Senhor dos Anéis"
+Olivia leu "Auto da Barca do Inferno"
+Amanda deseja ler "A Cartomante"
+Bruno deseja ler "Dom Casmurro"
+Carla deseja ler "Minha Vida de Menina"
+Diego deseja ler "Admirável Mundo Novo"
+Elena deseja ler "O Senhor dos Anéis"
+Felipe deseja ler "Casa-Grande & Senzala"
+Gabriela deseja ler "Vaga Música"
+Henrique deseja ler "Capitães da Areia"
+Isabela deseja ler "As Aventuras de Tom Sawyer"
+João deseja ler "A Droga da Obediência"
+Karen deseja ler "O Hobbit"
+Leonardo deseja ler "O Tempo e o Vento"
+Mariana deseja ler "O Nome da Rosa"
+Nicolas deseja ler "Robinson Crusoé"
+Olivia deseja ler "O Coruja"
+Bruno já deseja ler "Dom Casmurro", recomendação desnecessária
+Bruno recomenda "O Nome da Rosa" para Carla
+Henrique já deseja ler "Capitães da Areia", recomendação desnecessária
+Diego recomenda "O Coruja" para Elena
+Elena recomenda "A Droga da Obediência" para Felipe
+Felipe recomenda "O Hobbit" para Gabriela
+Gabriela recomenda "O Tempo e o Vento" para Amanda
+Henrique recomenda "Vaga Música" para Isabela
+Isabela recomenda "E Não Sobrou Nenhum" para João
+João recomenda "Robinson Crusoé" para Karen
+Karen recomenda "Triste Fim de Policarpo Quaresma" para Leonardo
+Leonardo recomenda "O Guarani" para Mariana
+Mariana recomenda "Admirável Mundo Novo" para Nicolas
+Nicolas recomenda "O Senhor dos Anéis" para Olivia
+Olivia recomenda "Auto da Barca do Inferno" para Amanda
+Bruno não possui recomendação do livro ID 1 feita por Amanda
+Gabriela não possui recomendação do livro ID 4 feita por Amanda
+Imprime toda a BookED
+
 Leitor: Amanda
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: Dom Casmurro, O Alienista
+Desejados: A Cartomante
+Recomendacoes: O Tempo e o Vento, Auto da Barca do Inferno
 Afinidades:
 
 Leitor: Bruno
-Lidos:
-Desejados:
+Lidos: O Nome da Rosa
+Desejados: Dom Casmurro
 Recomendacoes:
 Afinidades:
 
 Leitor: Carla
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: Capitães da Areia
+Desejados: Minha Vida de Menina
+Recomendacoes: O Nome da Rosa
 Afinidades:
 
 Leitor: Diego
-Lidos:
-Desejados:
+Lidos: O Coruja
+Desejados: Admirável Mundo Novo
 Recomendacoes:
 Afinidades:
 
 Leitor: Elena
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: A Droga da Obediência
+Desejados: O Senhor dos Anéis
+Recomendacoes: O Coruja
 Afinidades:
 
 Leitor: Felipe
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: O Hobbit
+Desejados: Casa-Grande & Senzala
+Recomendacoes: A Droga da Obediência
 Afinidades:
 
 Leitor: Gabriela
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: O Tempo e o Vento
+Desejados: Vaga Música
+Recomendacoes: O Hobbit
 Afinidades:
 
 Leitor: Henrique
-Lidos:
-Desejados:
+Lidos: Vaga Música
+Desejados: Capitães da Areia
 Recomendacoes:
 Afinidades:
 
 Leitor: Isabela
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: E Não Sobrou Nenhum
+Desejados: As Aventuras de Tom Sawyer
+Recomendacoes: Vaga Música
 Afinidades:
 
 Leitor: João
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: Robinson Crusoé
+Desejados: A Droga da Obediência
+Recomendacoes: E Não Sobrou Nenhum
 Afinidades:
 
 Leitor: Karen
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: Triste Fim de Policarpo Quaresma
+Desejados: O Hobbit
+Recomendacoes: Robinson Crusoé
 Afinidades:
 
 Leitor: Leonardo
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: O Guarani
+Desejados: O Tempo e o Vento
+Recomendacoes: Triste Fim de Policarpo Quaresma
 Afinidades:
 
 Leitor: Mariana
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: Admirável Mundo Novo
+Desejados: O Nome da Rosa
+Recomendacoes: O Guarani
 Afinidades:
 
 Leitor: Nicolas
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: O Senhor dos Anéis
+Desejados: Robinson Crusoé
+Recomendacoes: Admirável Mundo Novo
 Afinidades:
 
 Leitor: Olivia
-Lidos:
-Desejados:
-Recomendacoes:
+Lidos: Auto da Barca do Inferno
+Desejados: O Coruja
+Recomendacoes: O Senhor dos Anéis
 Afinidades:
 
