@@ -129,7 +129,14 @@ void executabookED(bookED *alexandria) {
     } else if (comando == 5) {
       rejeitarRecomendacao(alexandria, id1, id2, id3);
     } else if (comando == 6) {
+      
+    } else if (comando == 7) {
+
+    } else if (comando == 8) {
+      fprintf(alexandria->fSaida, "Imprime toda a BookED\n\n");
+      imprimeLista(alexandria->leitores, LEITOR, alexandria->fSaida);
     }
+    comando = -1;
   } while (foi_lido != EOF);
 }
 
