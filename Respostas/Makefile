@@ -45,7 +45,7 @@ diff3:
 
 test0: compile clean debug_run0
 
-test1: compile clean debug_run1S
+test1: compile clean debug_run1
 
 test2: compile clean debug_run2
 

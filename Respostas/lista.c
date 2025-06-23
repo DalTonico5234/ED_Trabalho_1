@@ -132,34 +132,34 @@ void *retiraDaLista(Lista *list, int id, int tipo) {
   }
 }
 
-void imprimeLista(Lista *list, int tipo) {
+void imprimeLista(Lista *list, int tipo, FILE *fSaida) {
   Celula *temp = list->prim;
   if (temp == NULL && tipo != LEITOR) {
-    printf("\n");
+    fprintf(fSaida,"\n");
   }
   while (temp != NULL) {
     if (tipo == LIVRO) {
-      printf(" %s", getTituloLivro(temp->dado));
+      fprintf(fSaida," %s", getTituloLivro(temp->dado));
       if (temp != list->ult) {
-        printf(",");
+        fprintf(fSaida,",");
       } else {
-        printf("\n");
+        fprintf(fSaida,"\n");
       }
     } else if (tipo == AFINIDADES) {
-      printf(" %s", getNomeLeitor(temp->dado));
+      fprintf(fSaida," %s", getNomeLeitor(temp->dado));
       if (temp != list->ult) {
-        printf(",");
+        fprintf(fSaida,",");
       } else {
-        printf("\n");
+        fprintf(fSaida,"\n");
       }
     } else if (tipo == LEITOR) {
       imprimeLeitor(temp->dado);
     } else if (tipo == RECOMENDACAO) {
-      printf(" %s", getLivroRecomendado(temp->dado));
+      fprintf(fSaida," %s", getLivroRecomendado(temp->dado));
       if (temp != list->ult) {
-        printf(",");
+        fprintf(fSaida,",");
       } else {
-        printf("\n");
+        fprintf(fSaida,"\n");
       }
     }
     temp = temp->prox;

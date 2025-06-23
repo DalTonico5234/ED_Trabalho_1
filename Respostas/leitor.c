@@ -42,7 +42,7 @@ Leitor *leLeitor(FILE *fLeitor, int *foi_lido) {
   if (*foi_lido == 0) {
     printf("ERRO ao ler arquivo de leitores\n");
   }
-  printf("id lido: %d; nome lido: %s; npref lido: %d;\n", id, nome, npref);
+  printf(,"id lido: %d; nome lido: %s; npref lido: %d;\n", id, nome, npref);
   char preferencias[npref][MAX_STRING];
   for (int i = 0; i < npref; i++) {
     preferencias[i][1] = '\0';
@@ -50,10 +50,10 @@ Leitor *leLeitor(FILE *fLeitor, int *foi_lido) {
   for (int i = 0; i < npref; i++) {
     if (i != (npref - 1)) {
       *foi_lido = fscanf(fLeitor, "%200[^;];", preferencias[i]);
-      printf("preferencia lida: %s\n", preferencias[i]);
+      fprintf(fSaida,"preferencia lida: %s\n", preferencias[i]);
     } else {
       *foi_lido = fscanf(fLeitor, "%200[^\n]\n", preferencias[i]);
-      printf("preferencia lida: %s\n", preferencias[i]);
+      fprintf(fSaida,"preferencia lida: %s\n", preferencias[i]);
     }
   }
 
@@ -81,21 +81,21 @@ char *getNomeLeitor(void *lei) {
   return le->nome;
 }
 
-void imprimeLeitor(void *leis) {
+void imprimeLeitor(void *leis, FILE *fSaida) {
   if (!leis) {
     printf("ERRO em ponteiro de leitor\n");
     return;
   }
   Leitor *lei = (Leitor *)leis;
 
-  printf("Leitor: %s\n", lei->nome);
-  printf("Lidos:");
+  fprintf(fSaida,"Leitor: %s\n", lei->nome);
+  fprintf(fSaida,"Lidos:");
   imprimeLista(lei->lidos, LIVRO);
-  printf("Desejados:");
+  fprintf(fSaida,"Desejados:");
   imprimeLista(lei->desejados, LIVRO);
-  printf("Recomendacoes:");
+  fprintf(fSaida,"Recomendacoes:");
   imprimeLista(lei->recomendacoes, RECOMENDACAO);
-  printf("Afinidades:\n");
+  fprintf(fSaida,"Afinidades:\n");
   imprimeLista(lei->afinidades, AFINIDADES);
 }
 

@@ -10,8 +10,6 @@ struct booked
 {
     Lista *leitores;
     Lista *livros;
-    FILE *fLeitores;
-    FILE *fLivros;
     FILE *fComandos;
     FILE *fSaida;
 };
@@ -33,22 +31,30 @@ bookED *criabookED(char *caminho_comum)
     strcat(caminho_comandos, "comandos.txt");
     strcat(caminho_saida, "saida.txt");
 
-    library->fLivros = fopen(caminho_livros, "r");
-    library->fLeitores = fopen(caminho_leitores, "r");
+    FILE *fLivros = fopen(caminho_livros, "r");
+    FILE *fLeitores = fopen(caminho_leitores, "r");
     library->fComandos = fopen(caminho_comandos, "r");
-    library->fSaida = fopen(caminho_saida, "r");
+    library->fSaida = fopen(caminho_saida, "w");
 
     int foi_lido = 0;
     Livro *registrado;
     char primeira_linha[MAX_STRING];
-    fscanf(library->fLivros, "%[^\n]\n", primeira_linha);
-    do {
-        registrado = leLivro(library->fLivros, &foi_lido);
-        insereNaLista(library->livros, registrado, LIVRO);
+    fscanf(fLivros, "%[^\n]\n", primeira_linha);
+    do
+    {
+        registrado = leLivro(fLivros, &foi_lido);
+        if (foi_lido == EOF)
+        {
+            liberaLivro(registrado);
+        }
+        else
+        {
+            insereNaLista(library->livros, registrado, LIVRO);
+        }
     } while (foi_lido != EOF);
 
-    fclose(library->fLivros);
-    fclose(library->fLeitores);
+    fclose(fLivros);
+    fclose(fLeitores);
 
     return library;
 }
