@@ -26,13 +26,13 @@ Livros em comum entre Diana e Eduardo: Nenhum livro em comum
 Livros em comum entre Gabriel e Helena: Nenhum livro em comum
 Livros em comum entre Ana e Diana: Nenhum livro em comum
 Erro: Leitor com ID 15 não encontrado
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
+Existe afinidade entre Ana e Bruno
+Existe afinidade entre Diana e Eduardo
+Existe afinidade entre Gabriel e Helena
+Não existe afinidade entre Ana e Diana
+Não existe afinidade entre Ana e Júlia
+Não existe afinidade entre Diana e Gabriel
+Não existe afinidade entre Bruno e Helena
 Erro: Leitor com ID 99 não encontrado
 Erro: Livro com ID 99 não encontrado
 Erro: Leitor com ID 99 não encontrado
@@ -57,60 +57,60 @@ Imprime toda a BookED
 Leitor: Ana
 Lidos: Duna, Fundação
 Desejados: Sapiens
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Bruno, Carlos
 
 Leitor: Bruno
 Lidos: Duna
-Desejados:
-Recomendacoes:
+Desejados: 
+Recomendacoes: 
 Afinidades: Ana
 
 Leitor: Carlos
 Lidos: Neuromancer
-Desejados:
-Recomendacoes:
+Desejados: 
+Recomendacoes: 
 Afinidades: Ana
 
 Leitor: Diana
 Lidos: Orgulho e Preconceito
 Desejados: Como Eu Era Antes de Você
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Eduardo, Fernanda
 
 Leitor: Eduardo
 Lidos: Como Eu Era Antes de Você
 Desejados: Orgulho e Preconceito
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Diana
 
 Leitor: Fernanda
 Lidos: Hamlet
-Desejados:
-Recomendacoes:
+Desejados: 
+Recomendacoes: 
 Afinidades: Diana
 
 Leitor: Gabriel
 Lidos: O Iluminado
 Desejados: A Garota no Trem
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Helena
 
 Leitor: Helena
 Lidos: Drácula
 Desejados: O Iluminado
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Gabriel, Igor
 
 Leitor: Igor
 Lidos: Psicose
-Desejados:
+Desejados: 
 Recomendacoes: Drácula
 Afinidades: Helena
 
 Leitor: Júlia
 Lidos: Steve Jobs
 Desejados: Einstein
-Recomendacoes:
-Afinidades:
+Recomendacoes: 
+Afinidades: 
 

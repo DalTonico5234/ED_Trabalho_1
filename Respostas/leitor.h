@@ -27,7 +27,7 @@ typedef struct recomendacao Recomendacao;
 typedef struct Leitor Leitor;
 
 /**
- * Cria uma estrutura do tipo Livro, preenchendo todos seus atributos
+ * @brief Cria uma estrutura do tipo Livro, preenchendo todos seus atributos
  * @param id Identificador único
  * @param nome Nome do Leitor
  * @param preferencias Vetor de preferências (strings)
@@ -78,14 +78,19 @@ Recomendacao *getRecomendacaoId(Leitor *lei, int id);
 Livro *getLivroLidoId(Leitor *lei, int id);
 
 /**
- * @brief Obtém um livro desejado do leitor, buscando-a na lista de desejados
- * por um id
+ * @brief Obtém um livro desejado do leitor, buscando-a na lista de desejados por um id
  * @param lei O leitor
  * @param id identificador único de livro
  * @return livro que tem id encontrado, NULL caso não esteja cadastrado
  */
 Livro *getLivroDesejadoId(Leitor *lei, int id);
 
+/**
+ * @brief Obtém uma prefência (string) do leitor, buscando-a no vetor de preferências por um id
+ * @param lei O leitor
+ * @param id indíce da preferência desejada
+ * @return preferência no índice id, se encontrada
+ */
 char *getPreferenciaLeitor(Leitor *lei, int id);
 
 /**
@@ -146,14 +151,26 @@ void removerRecomendacao(Leitor *lei, Recomendacao *Rec);
  */
 void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
 
+/**
+ * @brief Adiciona um leitor à afinidade de outro caso tenham a mesma preferência
+ * @param leiDes leitor onde será adicionada a afinidade, caso exista
+ * @param leiOri leitor que será avaliado para adicionar afinidade
+ */
 void preencheAfinidadeDireta(void *leiDes, void *leiOri);
+
+/**
+ * @brief verifica se existe afinidade direta ou indireta entre dois leitores, salvando todos que já foram vistos em uma lista de visitados
+ * @param lei1 leitor de origem da afinidade, a partir do qual se deve verificar se é possível chegam em:
+ * @param lei2 leitor de destino
+ * @param visitados lista que salva os leitores que já foram verificados pela função, para evitar loop circular infinito
+ * @return 1 se é possível chegar a lei2 a partir de lei1, 0 caso contrário
+ */
+int verificaAfinidade(Leitor *lei1, Leitor *lei2, void *visitados);
 
 /**
  * @brief Libera o leitor da memoria, desalocando todos os atributos necessários
  * @param lei O leitor
  */
 void liberaLeitor(void *lei);
-
-int verificaAfinidade(Leitor *lei1, Leitor *lei2, void *visitados);
 
 #endif

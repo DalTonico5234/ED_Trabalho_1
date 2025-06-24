@@ -52,18 +52,18 @@ Livros em comum entre Elena e João: Nenhum livro em comum
 Livros em comum entre Gabriela e Karen: Nenhum livro em comum
 Livros em comum entre Isabela e Mariana: Nenhum livro em comum
 Livros em comum entre Leonardo e Olivia: Nenhum livro em comum
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
-AINDA NÃO TÀ PRONTAAAAAAAAA
+Existe afinidade entre Amanda e Gabriela
+Existe afinidade entre Bruno e Isabela
+Existe afinidade entre Carla e Olivia
+Existe afinidade entre Elena e Nicolas
+Existe afinidade entre Felipe e Leonardo
+Existe afinidade entre Henrique e Mariana
+Existe afinidade entre João e Diego
+Existe afinidade entre Bruno e Elena
+Existe afinidade entre João e Olivia
+Existe afinidade entre Felipe e Diego
+Existe afinidade entre Henrique e Nicolas
+Existe afinidade entre Diego e Karen
 Imprime toda a BookED
 
 Leitor: Amanda
@@ -75,7 +75,7 @@ Afinidades: Bruno, Carla, Felipe, Gabriela, Henrique, Karen, Leonardo, Olivia
 Leitor: Bruno
 Lidos: O Nome da Rosa
 Desejados: Dom Casmurro
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Amanda, Gabriela, Isabela, Karen, Mariana
 
 Leitor: Carla
@@ -87,7 +87,7 @@ Afinidades: Amanda, Diego, Gabriela, Henrique, Isabela, Karen, Leonardo, Mariana
 Leitor: Diego
 Lidos: O Coruja
 Desejados: Admirável Mundo Novo
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Carla, Elena, Isabela, João, Leonardo, Mariana, Olivia
 
 Leitor: Elena
@@ -111,7 +111,7 @@ Afinidades: Amanda, Bruno, Carla, Felipe, Henrique, Karen, Leonardo, Mariana, Ol
 Leitor: Henrique
 Lidos: Vaga Música
 Desejados: Capitães da Areia
-Recomendacoes:
+Recomendacoes: 
 Afinidades: Amanda, Carla, Gabriela, Karen, Mariana, Olivia
 
 Leitor: Isabela

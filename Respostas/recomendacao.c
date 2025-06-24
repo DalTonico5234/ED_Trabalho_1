@@ -15,8 +15,7 @@ struct recomendacao
   int id;
 };
 
-Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao,
-                               Leitor *sei_nao, int id)
+Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao, Leitor *sei_nao, int id)
 {
   Recomendacao *se_diverte_po = (Recomendacao *)malloc(sizeof(Recomendacao));
 

@@ -63,4 +63,6 @@ full3: test3 diff3
 
 full: full0 full1 full2 full3
 	
+finally0:
+	./../Casos/test0/main
 	

@@ -19,8 +19,7 @@ bookED *criabookED(char *caminho_comum) {
   library->leitores = criaLista();
   library->livros = criaLista();
 
-  char caminho_livros[MAX_STRING], caminho_leitores[MAX_STRING],
-      caminho_comandos[MAX_STRING], caminho_saida[MAX_STRING];
+  char caminho_livros[MAX_STRING], caminho_leitores[MAX_STRING], caminho_comandos[MAX_STRING], caminho_saida[MAX_STRING];
   strcpy(caminho_livros, caminho_comum);
   strcpy(caminho_leitores, caminho_comum);
   strcpy(caminho_comandos, caminho_comum);

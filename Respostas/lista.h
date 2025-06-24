@@ -73,6 +73,28 @@ void *retiraDaLista(Lista *list, int id, int tipo);
 void imprimeLista(Lista *list, int tipo, FILE *fSaida);
 
 /**
+ * @brief Preenche todas as afinidades diretas de uma lista de leitores
+ * @param leitores lista com todos os leitores cadastrados
+ */
+void preencheAfinidadesDiretas(Lista *leitores);
+
+/**
+ * @brief Função recursiva que verifica se, a partir de uma lista de afinidades é possível chegar a determinado leitor
+ * @param afinidades lista de leitores cadastrados na afinidade do leitor de origem
+ * @param des leitor de destino ao qual se deseja chegar
+ * @param visitados lista que salva os leitores que já foram verificados pela função, para evitar loop circular infinito
+ * @return 1 se é possível chegar a lei2 a partir de lei1, 0 caso contrário
+ */
+int procuraAfinidade(Lista *afinidades, Leitor *des, Lista *visitados);
+
+/**
+ * @brief Verifica se determinada lista não tem nenhum elemento (está vazia)
+ * @param list lista a ser verificada
+ * @return 1 se list for vazia, 0 caso contrário
+ */
+int ehListaVazia(Lista *list);
+
+/**
  * @brief Libera toda a memória alocada para a lista
  * Se modo for 1, libera também os dados de acordo com a função específica para
  * cada dado Se modo for diferente de 1, libera apenas a estrutura da lista
@@ -80,9 +102,5 @@ void imprimeLista(Lista *list, int tipo, FILE *fSaida);
  * @param modo inteiro que armazena a opção de liberação
  */
 void liberaLista(Lista *list, int modo);
-
-void preencheAfinidadesDiretas(Lista *leitores);
-
-int procuraAfinidade(Lista *afinidades, Leitor *des, Lista *visitados);
 
 #endif
