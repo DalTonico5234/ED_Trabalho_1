@@ -70,4 +70,5 @@ void imprimeLista(Lista *list, int tipo, FILE *fSaida);
  */
 void liberaLista(Lista *list, int tipo);
 
+void comparaDadosLista(Lista *list1, Lista *list2, FILE *fSaida);
 #endif

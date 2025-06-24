@@ -192,3 +192,28 @@ void liberaLista(Lista *list, int tipo) {
   list->ult = NULL;
   free(list);
 }
+
+void comparaDadosLista(Lista *list1, Lista *list2, FILE *fSaida) {
+  Celula *temp1 = list1->prim;
+  Celula *temp2;
+  int qtd = 0;
+  while (temp1 != NULL) {
+    temp2 = list2->prim;
+    while (temp2 != NULL) {
+      if (getIdLivro(temp1->dado) == getIdLivro(temp2->dado)) {
+        if (qtd > 0) {
+          fprintf(fSaida, ",");
+        }
+        fprintf(fSaida, " %s", getTituloLivro(temp2->dado));
+        qtd++;
+      }
+      temp2 = temp2->prox;
+    }
+
+    temp1 = temp1->prox;
+  }
+  if (qtd == 0) {
+    fprintf(fSaida, " Nenhum livro em comum");
+  }
+  fprintf(fSaida, "\n");
+}

@@ -37,6 +37,8 @@ void adicionaLivroDesejado(bookED *alexandria, int id1, int id2);
 
 void recomendarLivroED(bookED *alexandria, int id1, int id2, int id3);
 
-void processarRecomendacaoED(bookED *alexandria, int id3, int id2, int id1, int yesno);
+void processarRecomendacaoED(bookED *alexandria, int id3, int id2, int id1,
+                             int yesno);
 
+void buscaLivrosEmComum(bookED *alexandria, int id1, int id2);
 #endif

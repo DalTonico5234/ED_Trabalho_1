@@ -122,4 +122,6 @@ Livro *getLivroLidoId(Leitor *lei, int id);
 
 Livro *getLivroDesejadoId(Leitor *lei, int id);
 
+void comparaLeitores(Leitor *lei1, Leitor *lei2, FILE *fSaida);
+
 #endif

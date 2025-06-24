@@ -6,10 +6,8 @@
 
 #include "booked.h"
 
-int main (int argc, char *argv[])
-{
-    bookED *biblioteca = criabookED(argv[argc-1]);
-    executabookED(biblioteca);
-    liberabookED(biblioteca);
+int main(int argc, char *argv[]) {
+  bookED *biblioteca = criabookED(argv[argc - 1]);
+  executabookED(biblioteca);
+  liberabookED(biblioteca);
 }
-
