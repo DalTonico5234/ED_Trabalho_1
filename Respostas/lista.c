@@ -275,3 +275,22 @@ void comparaDadosLista(Lista *list1, Lista *list2, FILE *fSaida)
   }
   fprintf(fSaida, "\n");
 }
+
+void preencheAfinidadesDiretas(Lista *leitores)
+{
+  Celula *temp1 = leitores->prim;
+  Celula *temp2;
+  while (temp1 != NULL)
+  {
+    temp2 = leitores->prim;
+    while (temp2 != NULL)
+    {
+      if (temp1 != temp2)
+      {
+        preencheAfinidadeDireta(temp1->dado, temp2->dado);
+      }
+      temp2 = temp2->prox;
+    }
+    temp1 = temp1->prox;
+  }
+}

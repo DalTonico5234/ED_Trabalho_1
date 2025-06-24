@@ -18,7 +18,7 @@ struct Leitor
   Lista *afinidades;
 };
 
-Leitor *criaLeitor(int id, char *nome, char preferencias[][MAX_STRING],int npref)
+Leitor *criaLeitor(int id, char *nome, char preferencias[][MAX_STRING], int npref)
 {
   Leitor *lei = (Leitor *)malloc(sizeof(Leitor));
   lei->id = id;
@@ -68,6 +68,20 @@ Leitor *leLeitor(FILE *fLeitor, int *foi_lido)
     if (*foi_lido == EOF)
     {
       return NULL;
+    }
+  }
+  // papando os espaços: funciona :)))
+  for (int i = 0; i < npref; i++)
+  {
+    for (int caracter = 0; caracter < (int)strlen(preferencias[i]); caracter++)
+    {
+      if (preferencias[i][caracter] == ' ')
+      {
+        for (int caracter2 = caracter; caracter2 < (int)strlen(preferencias[i]); caracter2++)
+        {
+          preferencias[i][caracter2] = preferencias[i][caracter2 + 1];
+        }
+      }
     }
   }
 
@@ -120,6 +134,11 @@ Livro *getLivroDesejadoId(Leitor *lei, int id)
   return livro;
 }
 
+char *getPreferenciaLeitor(Leitor *lei, int id)
+{
+  return lei->preferencias[id];
+}
+
 void comparaLeitores(Leitor *lei1, Leitor *lei2, FILE *fSaida)
 {
   comparaDadosLista(lei1->lidos, lei2->lidos, fSaida);
@@ -141,8 +160,9 @@ void imprimeLeitor(void *leis, FILE *fSaida)
   imprimeLista(lei->desejados, LIVRO, fSaida);
   fprintf(fSaida, "Recomendacoes:");
   imprimeLista(lei->recomendacoes, RECOMENDACAO, fSaida);
-  fprintf(fSaida, "Afinidades:\n");
+  fprintf(fSaida, "Afinidades:");
   imprimeLista(lei->afinidades, AFINIDADES, fSaida);
+  fprintf(fSaida, "\n");
 }
 
 void adicionarLidos(Leitor *lei, Livro *liv)
@@ -197,4 +217,22 @@ void liberaLeitor(void *le)
   liberaLista(lei->desejados, 0);
   liberaLista(lei->afinidades, 0);
   free(lei);
+}
+
+void preencheAfinidadeDireta(void *leiDes, void *leiOri)
+{
+  Leitor *lei1 = (Leitor *)leiDes;
+  Leitor *lei2 = (Leitor *)leiOri;
+
+  for (int i = 0; i < lei1->npref; i++)
+  {
+    for (int j = 0; j < lei2->npref; j++)
+    {
+      if (strcmp(lei1->preferencias[i], lei2->preferencias[j]) == 0)
+      {
+        adicionarAfinidade(lei1, lei2);
+        return;
+      }
+    }
+  }
 }

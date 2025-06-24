@@ -84,6 +84,8 @@ Livro *getLivroLidoId(Leitor *lei, int id);
  */
 Livro *getLivroDesejadoId(Leitor *lei, int id);
 
+char *getPreferenciaLeitor(Leitor *lei, int id);
+
 /**
  * @brief Busca livros lidos em comum entre dois leitores e os imprime
  * @param lei1 um dos leitores que será comparado
@@ -141,6 +143,8 @@ void removerRecomendacao(Leitor *lei, Recomendacao *Rec);
  * @param afinidade leitor que é a a afinidade
  */
 void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
+
+void preencheAfinidadeDireta(void *leiDes, void *leiOri);
 
 /**
  * @brief Libera o leitor da memoria, desalocando todos os atributos necessários

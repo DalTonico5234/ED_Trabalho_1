@@ -74,6 +74,8 @@ bookED *criabookED(char *caminho_comum)
 
     } while (foi_lido != EOF);
 
+    preencheAfinidadesDiretas(library->leitores);
+
     fclose(fLivros);
     fclose(fLeitores);
 
@@ -136,11 +138,9 @@ void adicionaLivroDesejado(bookED *alexandria, int id1, int id2)
 
 void recomendarLivroED(bookED *alexandria, int id1, int id2, int id3)
 {
-    Leitor *leitor1 =
-        (Leitor *)buscaDadoNaLista(alexandria->leitores, id1, getIdLeitor);
+    Leitor *leitor1 =(Leitor *)buscaDadoNaLista(alexandria->leitores, id1, getIdLeitor);
     Livro *livro = (Livro *)buscaDadoNaLista(alexandria->livros, id2, getIdLivro);
-    Leitor *leitor2 =
-        (Leitor *)buscaDadoNaLista(alexandria->leitores, id3, getIdLeitor);
+    Leitor *leitor2 = (Leitor *)buscaDadoNaLista(alexandria->leitores, id3, getIdLeitor);
 
     if (!leitor2)
     {

@@ -80,4 +80,6 @@ void imprimeLista(Lista *list, int tipo, FILE *fSaida);
  */
 void liberaLista(Lista *list, int modo);
 
+void preencheAfinidadesDiretas(Lista *leitores);
+
 #endif

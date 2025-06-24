@@ -58,55 +58,55 @@ Leitor: Ana
 Lidos: Duna, Fundação
 Desejados: Sapiens
 Recomendacoes:
-Afinidades:
+Afinidades: Bruno, Carlos
 
 Leitor: Bruno
 Lidos: Duna
 Desejados:
 Recomendacoes:
-Afinidades:
+Afinidades: Ana
 
 Leitor: Carlos
 Lidos: Neuromancer
 Desejados:
 Recomendacoes:
-Afinidades:
+Afinidades: Ana
 
 Leitor: Diana
 Lidos: Orgulho e Preconceito
 Desejados: Como Eu Era Antes de Você
 Recomendacoes:
-Afinidades:
+Afinidades: Eduardo, Fernanda
 
 Leitor: Eduardo
 Lidos: Como Eu Era Antes de Você
 Desejados: Orgulho e Preconceito
 Recomendacoes:
-Afinidades:
+Afinidades: Diana
 
 Leitor: Fernanda
 Lidos: Hamlet
 Desejados:
 Recomendacoes:
-Afinidades:
+Afinidades: Diana
 
 Leitor: Gabriel
 Lidos: O Iluminado
 Desejados: A Garota no Trem
 Recomendacoes:
-Afinidades:
+Afinidades: Helena
 
 Leitor: Helena
 Lidos: Drácula
 Desejados: O Iluminado
 Recomendacoes:
-Afinidades:
+Afinidades: Gabriel, Igor
 
 Leitor: Igor
 Lidos: Psicose
 Desejados:
 Recomendacoes: Drácula
-Afinidades:
+Afinidades: Helena
 
 Leitor: Júlia
 Lidos: Steve Jobs

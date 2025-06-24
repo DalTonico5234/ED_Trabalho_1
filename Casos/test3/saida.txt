@@ -70,89 +70,89 @@ Leitor: Amanda
 Lidos: Dom Casmurro, O Alienista
 Desejados: A Cartomante
 Recomendacoes: O Tempo e o Vento, Auto da Barca do Inferno
-Afinidades:
+Afinidades: Bruno, Carla, Felipe, Gabriela, Henrique, Karen, Leonardo, Olivia
 
 Leitor: Bruno
 Lidos: O Nome da Rosa
 Desejados: Dom Casmurro
 Recomendacoes:
-Afinidades:
+Afinidades: Amanda, Gabriela, Isabela, Karen, Mariana
 
 Leitor: Carla
 Lidos: Capitães da Areia
 Desejados: Minha Vida de Menina
 Recomendacoes: O Nome da Rosa
-Afinidades:
+Afinidades: Amanda, Diego, Gabriela, Henrique, Isabela, Karen, Leonardo, Mariana, Olivia
 
 Leitor: Diego
 Lidos: O Coruja
 Desejados: Admirável Mundo Novo
 Recomendacoes:
-Afinidades:
+Afinidades: Carla, Elena, Isabela, João, Leonardo, Mariana, Olivia
 
 Leitor: Elena
 Lidos: A Droga da Obediência
 Desejados: O Senhor dos Anéis
 Recomendacoes: O Coruja
-Afinidades:
+Afinidades: Diego, Felipe, Isabela, João, Karen, Mariana, Nicolas
 
 Leitor: Felipe
 Lidos: O Hobbit
 Desejados: Casa-Grande & Senzala
 Recomendacoes: A Droga da Obediência
-Afinidades:
+Afinidades: Amanda, Elena, Gabriela, Karen, Leonardo, Nicolas, Olivia
 
 Leitor: Gabriela
 Lidos: O Tempo e o Vento
 Desejados: Vaga Música
 Recomendacoes: O Hobbit
-Afinidades:
+Afinidades: Amanda, Bruno, Carla, Felipe, Henrique, Karen, Leonardo, Mariana, Olivia
 
 Leitor: Henrique
 Lidos: Vaga Música
 Desejados: Capitães da Areia
 Recomendacoes:
-Afinidades:
+Afinidades: Amanda, Carla, Gabriela, Karen, Mariana, Olivia
 
 Leitor: Isabela
 Lidos: E Não Sobrou Nenhum
 Desejados: As Aventuras de Tom Sawyer
 Recomendacoes: Vaga Música
-Afinidades:
+Afinidades: Bruno, Carla, Diego, Elena, João, Leonardo, Mariana, Nicolas, Olivia
 
 Leitor: João
 Lidos: Robinson Crusoé
 Desejados: A Droga da Obediência
 Recomendacoes: E Não Sobrou Nenhum
-Afinidades:
+Afinidades: Diego, Elena, Isabela, Mariana, Nicolas
 
 Leitor: Karen
 Lidos: Triste Fim de Policarpo Quaresma
 Desejados: O Hobbit
 Recomendacoes: Robinson Crusoé
-Afinidades:
+Afinidades: Amanda, Bruno, Carla, Elena, Felipe, Gabriela, Henrique, Nicolas, Olivia
 
 Leitor: Leonardo
 Lidos: O Guarani
 Desejados: O Tempo e o Vento
 Recomendacoes: Triste Fim de Policarpo Quaresma
-Afinidades:
+Afinidades: Amanda, Carla, Diego, Felipe, Gabriela, Isabela, Olivia
 
 Leitor: Mariana
 Lidos: Admirável Mundo Novo
 Desejados: O Nome da Rosa
 Recomendacoes: O Guarani
-Afinidades:
+Afinidades: Bruno, Carla, Diego, Elena, Gabriela, Henrique, Isabela, João
 
 Leitor: Nicolas
 Lidos: O Senhor dos Anéis
 Desejados: Robinson Crusoé
 Recomendacoes: Admirável Mundo Novo
-Afinidades:
+Afinidades: Elena, Felipe, Isabela, João, Karen
 
 Leitor: Olivia
 Lidos: Auto da Barca do Inferno
 Desejados: O Coruja
 Recomendacoes: O Senhor dos Anéis
-Afinidades:
+Afinidades: Amanda, Carla, Diego, Felipe, Gabriela, Henrique, Isabela, Karen, Leonardo
 

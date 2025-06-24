@@ -71,35 +71,35 @@ Leitor: Marcus
 Lidos: O Cortiço, O Xangô de Baker Street, Senhora
 Desejados: Agosto, A Moreninha, Incidente em Antares
 Recomendacoes:
-Afinidades:
+Afinidades: Lucius, Gaius
 
 Leitor: Lucius
 Lidos: A Hora da Estrela, O Caso da Estranha Fotografia, Iracema
 Desejados: A Grande Arte, Os Sertões, Nós
 Recomendacoes:
-Afinidades:
+Afinidades: Marcus, Julia, Gaius, Claudia
 
 Leitor: Julia
 Lidos: Agosto, A Moreninha, Incidente em Antares
 Desejados: O Cortiço, O Xangô de Baker Street
 Recomendacoes:
-Afinidades:
+Afinidades: Lucius, Claudia
 
 Leitor: Gaius
 Lidos: A Grande Arte, Os Sertões, Nós
 Desejados: Agosto, A Moreninha, Senhora
 Recomendacoes:
-Afinidades:
+Afinidades: Marcus, Lucius
 
 Leitor: Claudia
 Lidos: O Cortiço, O Xangô de Baker Street, Senhora
 Desejados: Incidente em Antares, A Grande Arte
 Recomendacoes:
-Afinidades:
+Afinidades: Lucius, Julia, Livia
 
 Leitor: Livia
 Lidos: A Hora da Estrela, O Caso da Estranha Fotografia
 Desejados: Os Sertões, Nós
 Recomendacoes:
-Afinidades:
+Afinidades: Claudia
 
