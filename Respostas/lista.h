@@ -46,7 +46,8 @@ void insereNaLista(Lista *list, void *dado, int tipo);
 void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId);
 
 /**
- * @brief Imprime os livros lidos em comum entre dois leitores, a partir de suas listas de lidos
+ * @brief Imprime os livros lidos em comum entre dois leitores, a partir de suas
+ * listas de lidos
  * @param list1 lista de livros lidos do leitor1
  * @param list2 lista de livros lidos do leitor2
  * @param fSaida ponteiro para o arquivo saidas.txt
@@ -73,8 +74,8 @@ void imprimeLista(Lista *list, int tipo, FILE *fSaida);
 
 /**
  * @brief Libera toda a memória alocada para a lista
- * Se modo for 1, libera também os dados de acordo com a função específica para cada dado
- * Se modo for diferente de 1, libera apenas a estrutura da lista
+ * Se modo for 1, libera também os dados de acordo com a função específica para
+ * cada dado Se modo for diferente de 1, libera apenas a estrutura da lista
  * @param list lista que será liberada
  * @param modo inteiro que armazena a opção de liberação
  */
@@ -82,6 +83,6 @@ void liberaLista(Lista *list, int modo);
 
 void preencheAfinidadesDiretas(Lista *leitores);
 
-int procuraAfinidade(Lista *afinidades, Leitor *des, Leitor *ant);
+int procuraAfinidade(Lista *afinidades, Leitor *des, Lista *visitados);
 
 #endif

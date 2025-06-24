@@ -61,7 +61,8 @@ int getIdLeitor(void *lei);
 char *getNomeLeitor(void *lei);
 
 /**
- * @brief Obtém uma recomendação do leitor, buscando-a na lista de recomendações por um id
+ * @brief Obtém uma recomendação do leitor, buscando-a na lista de recomendações
+ * por um id
  * @param lei O leitor
  * @param id identificador único de recomendação
  * @return Recomendação que tem id encontrada, NULL caso não esteja cadastrada
@@ -77,7 +78,8 @@ Recomendacao *getRecomendacaoId(Leitor *lei, int id);
 Livro *getLivroLidoId(Leitor *lei, int id);
 
 /**
- * @brief Obtém um livro desejado do leitor, buscando-a na lista de desejados por um id
+ * @brief Obtém um livro desejado do leitor, buscando-a na lista de desejados
+ * por um id
  * @param lei O leitor
  * @param id identificador único de livro
  * @return livro que tem id encontrado, NULL caso não esteja cadastrado
@@ -152,6 +154,6 @@ void preencheAfinidadeDireta(void *leiDes, void *leiOri);
  */
 void liberaLeitor(void *lei);
 
-int verificaAfinidade(Leitor *lei1, Leitor *lei2);
+int verificaAfinidade(Leitor *lei1, Leitor *lei2, void *visitados);
 
 #endif
