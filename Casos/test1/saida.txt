@@ -15,6 +15,11 @@ Claudia leu "O Xangô de Baker Street"
 Claudia leu "Senhora"
 Livia leu "A Hora da Estrela"
 Livia leu "O Caso da Estranha Fotografia"
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
 Marcus deseja ler "Agosto"
 Marcus deseja ler "A Moreninha"
 Marcus deseja ler "Incidente em Antares"
@@ -29,12 +34,18 @@ Claudia deseja ler "Incidente em Antares"
 Claudia deseja ler "A Grande Arte"
 Livia deseja ler "Os Sertões"
 Livia deseja ler "Nós"
+Livros em comum entre Marcus e Gaius: Nenhum livro em comum
+Livros em comum entre Marcus e Lucius: Nenhum livro em comum
+Livros em comum entre Lucius e Julia: Nenhum livro em comum
+Livros em comum entre Marcus e Claudia: O Cortiço, O Xangô de Baker Street, Senhora
 Marcus já leu "O Cortiço"
 Lucius já leu "A Hora da Estrela"
 Julia já leu "Agosto"
 Marcus já deseja ler "Agosto"
 Lucius já deseja ler "A Grande Arte"
 Julia já deseja ler "O Cortiço"
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
 Marcus não pode recomendar livros para si mesmo
 Lucius recomenda "Senhora" para Gaius
 Lucius não precisa da recomendação de "Iracema" pois já leu este livro
@@ -43,6 +54,17 @@ Gaius aceita recomendação "Senhora" de Lucius
 Lucius não possui recomendação do livro ID 6 feita por Claudia
 Lucius não precisa da recomendação de "A Hora da Estrela" pois já leu este livro
 Lucius não possui recomendação do livro ID 4 feita por Marcus
+Livros em comum entre Marcus e Gaius: Nenhum livro em comum
+Livros em comum entre Lucius e Julia: Nenhum livro em comum
+Livros em comum entre Claudia e Livia: Nenhum livro em comum
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
 Imprime toda a BookED
 
 Leitor: Marcus

@@ -21,6 +21,18 @@ Helena recomenda "Drácula" para Igor
 Bruno não possui recomendação do livro ID 1 feita por Ana
 Eduardo aceita recomendação "Orgulho e Preconceito" de Diana
 Helena aceita recomendação "O Iluminado" de Gabriel
+Livros em comum entre Ana e Bruno: Duna
+Livros em comum entre Diana e Eduardo: Nenhum livro em comum
+Livros em comum entre Gabriel e Helena: Nenhum livro em comum
+Livros em comum entre Ana e Diana: Nenhum livro em comum
+Erro: Leitor com ID 15 não encontrado
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
 Erro: Leitor com ID 99 não encontrado
 Erro: Livro com ID 99 não encontrado
 Erro: Leitor com ID 99 não encontrado
@@ -34,6 +46,10 @@ Erro: Leitor recomendador com ID 99 não encontrado
 Erro: Leitor com ID 99 não encontrado
 Ana não possui recomendação do livro ID 99 feita por Ana
 Erro: Leitor recomendador com ID 99 não encontrado
+Erro: Leitor com ID 99 não encontrado
+Erro: Leitor com ID 99 não encontrado
+Erro: Leitor com ID 99 não encontrado
+Erro: Leitor com ID 99 não encontrado
 Erro: Comando 9 não reconhecido
 Erro: Comando 0 não reconhecido
 Imprime toda a BookED

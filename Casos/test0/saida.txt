@@ -12,6 +12,11 @@ Bob recomenda "O Senhor dos Anéis: A Sociedade do Anel" para Clara
 Clara recomenda "A Culpa é das Estrelas" para Bob
 Clara aceita recomendação "O Senhor dos Anéis: A Sociedade do Anel" de Bob
 Alice rejeita recomendação "O Nome da Rosa" de Bob
+Livros em comum entre Alice e Bob: Garota Exemplar
+Livros em comum entre Alice e Clara: Nenhum livro em comum
+Livros em comum entre Bob e Clara: Nenhum livro em comum
+AINDA NÃO TÀ PRONTAAAAAAAAA
+AINDA NÃO TÀ PRONTAAAAAAAAA
 Imprime toda a BookED
 
 Leitor: Alice

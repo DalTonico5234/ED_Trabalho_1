@@ -51,6 +51,8 @@ test2: compile clean debug_run2
 
 test3: compile clean debug_run3
 
+test: test0 test1 test2 test3
+
 full0: test0 diff0
 
 full1: test1 diff1
