@@ -8,19 +8,22 @@
 
 typedef struct celula Celula;
 
-struct celula {
+struct celula
+{
   Celula *prox;
   Celula *ant;
   void *dado;
   int tipo;
 };
 
-struct lista {
+struct lista
+{
   Celula *prim;
   Celula *ult;
 };
 
-Lista *criaLista() {
+Lista *criaLista()
+{
   Lista *list = (Lista *)malloc(sizeof(Lista));
 
   list->prim = NULL;
@@ -31,11 +34,13 @@ Lista *criaLista() {
 
 void insereNaLista(Lista *list, void *dado, int tipo) // no final
 {
-  if (!list) {
+  if (!list)
+  {
     printf("ERRO em ponteiro de lista\n");
     return;
   }
-  if (!dado) {
+  if (!dado)
+  {
     printf("ERRO em ponteiro de dado a ser inserido\n");
     return;
   }
@@ -43,9 +48,12 @@ void insereNaLista(Lista *list, void *dado, int tipo) // no final
   nova->dado = dado;
   nova->tipo = tipo;
 
-  if (!list->ult) {
+  if (!list->ult)
+  {
     list->prim = list->ult = nova;
-  } else {
+  }
+  else
+  {
     list->ult->prox = nova;
     nova->ant = list->ult;
     list->ult = nova;
@@ -53,49 +61,62 @@ void insereNaLista(Lista *list, void *dado, int tipo) // no final
   nova->prox = NULL;
 }
 
-static Celula *buscaNaLista(Lista *list, int id, fGetIdDado getId) {
+static Celula *buscaNaLista(Lista *list, int id, fGetIdDado getId)
+{
   Celula *procura_se;
   for (procura_se = list->prim; procura_se != NULL;
-       procura_se = procura_se->prox) {
-    if (getId(procura_se->dado) == id) {
+       procura_se = procura_se->prox)
+  {
+    if (getId(procura_se->dado) == id)
+    {
       return procura_se;
     }
   }
   return NULL;
 }
 
-void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId) {
+void *buscaDadoNaLista(Lista *list, int id, fGetIdDado getId)
+{
   Celula *procura_se = buscaNaLista(list, id, getId);
-  if (procura_se == NULL) {
+  if (procura_se == NULL)
+  {
     return NULL;
   }
   return procura_se->dado;
 }
 
-void *retiraDaLista(Lista *list, int id, int tipo) {
+void *retiraDaLista(Lista *list, int id, int tipo)
+{
   // busca da célula de acordo com o tipo
   Celula *procura_se = NULL;
-  if (tipo == LIVRO) {
+  if (tipo == LIVRO)
+  {
     procura_se = buscaNaLista(list, id, getIdLivro);
-  } else if (tipo == LEITOR) {
+  }
+  else if (tipo == LEITOR)
+  {
     procura_se = buscaNaLista(list, id, getIdLeitor);
-  } else if (tipo == RECOMENDACAO) {
+  }
+  else if (tipo == RECOMENDACAO)
+  {
     procura_se = buscaNaLista(list, id, getIdRecomendacao);
   }
 
   // caso não tenha sido encontrada
-  if (procura_se == NULL) {
+  if (procura_se == NULL)
+  {
     return NULL;
   }
 
   // caso tenha sido encontrada, retirada do elemento
   if (procura_se == list->prim &&
-      procura_se == list->ult) //único elemento da lista
+      procura_se == list->ult) // único elemento da lista
   {
     list->prim = list->ult = NULL;
     void *dado = procura_se->dado;
     free(procura_se);
-    if (tipo == RECOMENDACAO) {
+    if (tipo == RECOMENDACAO)
+    {
       liberaRecomendacao(dado);
       return NULL;
     }
@@ -107,30 +128,34 @@ void *retiraDaLista(Lista *list, int id, int tipo) {
     list->prim->ant = NULL;
     void *dado = procura_se->dado;
     free(procura_se);
-    if (tipo == RECOMENDACAO) {
+    if (tipo == RECOMENDACAO)
+    {
       liberaRecomendacao(dado);
       return NULL;
     }
     return dado;
   }
-  if (procura_se == list->ult) //último elemento da lista
+  if (procura_se == list->ult) // último elemento da lista
   {
     list->ult = list->ult->ant;
     list->ult->prox = NULL;
     void *dado = procura_se->dado;
     free(procura_se);
-    if (tipo == RECOMENDACAO) {
+    if (tipo == RECOMENDACAO)
+    {
       liberaRecomendacao(dado);
       return NULL;
     }
     return dado;
-  } else // caso geral
+  }
+  else // caso geral
   {
     procura_se->ant->prox = procura_se->prox;
     procura_se->prox->ant = procura_se->ant;
     void *dado = procura_se->dado;
     free(procura_se);
-    if (tipo == RECOMENDACAO) {
+    if (tipo == RECOMENDACAO)
+    {
       liberaRecomendacao(dado);
       return NULL;
     }
@@ -138,50 +163,77 @@ void *retiraDaLista(Lista *list, int id, int tipo) {
   }
 }
 
-void imprimeLista(Lista *list, int tipo, FILE *fSaida) {
+void imprimeLista(Lista *list, int tipo, FILE *fSaida)
+{
   Celula *temp = list->prim;
-  if (temp == NULL && tipo != LEITOR) {
+  if (temp == NULL && tipo != LEITOR)
+  {
     fprintf(fSaida, "\n");
   }
-  while (temp != NULL) {
-    if (tipo == LIVRO) {
+  while (temp != NULL)
+  {
+    if (tipo == LIVRO)
+    {
       fprintf(fSaida, " %s", getTituloLivro(temp->dado));
-      if (temp != list->ult) {
+      if (temp != list->ult)
+      {
         fprintf(fSaida, ",");
-      } else {
+      }
+      else
+      {
         fprintf(fSaida, "\n");
       }
-    } else if (tipo == AFINIDADES) {
+    }
+    else if (tipo == AFINIDADES)
+    {
       fprintf(fSaida, " %s", getNomeLeitor(temp->dado));
-      if (temp != list->ult) {
+      if (temp != list->ult)
+      {
         fprintf(fSaida, ",");
-      } else {
+      }
+      else
+      {
         fprintf(fSaida, "\n");
       }
-    } else if (tipo == LEITOR) {
+    }
+    else if (tipo == LEITOR)
+    {
       imprimeLeitor(temp->dado, fSaida);
-    } else if (tipo == RECOMENDACAO) {
+    }
+    else if (tipo == RECOMENDACAO)
+    {
       fprintf(fSaida, " %s", getLivroRecomendado(temp->dado));
-      if (temp != list->ult) {
+      if (temp != list->ult)
+      {
         fprintf(fSaida, ",");
-      } else {
+      }
+      else
+      {
         fprintf(fSaida, "\n");
       }
     }
     temp = temp->prox;
   }
 }
-void liberaLista(Lista *list, int tipo) {
+void liberaLista(Lista *list, int tipo)
+{
   Celula *temp = list->prim;
   Celula *prox;
-  while (temp != NULL) {
+  while (temp != NULL)
+  {
     prox = temp->prox;
-    if (temp->dado != NULL && tipo == 1) {
-      if (temp->tipo == LIVRO) {
+    if (temp->dado != NULL && tipo == 1)
+    {
+      if (temp->tipo == LIVRO)
+      {
         liberaLivro(temp->dado);
-      } else if (temp->tipo == LEITOR) {
+      }
+      else if (temp->tipo == LEITOR)
+      {
         liberaLeitor(temp->dado);
-      } else if (temp->tipo == RECOMENDACAO) {
+      }
+      else if (temp->tipo == RECOMENDACAO)
+      {
         liberaRecomendacao(temp->dado);
       }
     }
@@ -193,15 +245,20 @@ void liberaLista(Lista *list, int tipo) {
   free(list);
 }
 
-void comparaDadosLista(Lista *list1, Lista *list2, FILE *fSaida) {
+void comparaDadosLista(Lista *list1, Lista *list2, FILE *fSaida)
+{
   Celula *temp1 = list1->prim;
   Celula *temp2;
   int qtd = 0;
-  while (temp1 != NULL) {
+  while (temp1 != NULL)
+  {
     temp2 = list2->prim;
-    while (temp2 != NULL) {
-      if (getIdLivro(temp1->dado) == getIdLivro(temp2->dado)) {
-        if (qtd > 0) {
+    while (temp2 != NULL)
+    {
+      if (getIdLivro(temp1->dado) == getIdLivro(temp2->dado))
+      {
+        if (qtd > 0)
+        {
           fprintf(fSaida, ",");
         }
         fprintf(fSaida, " %s", getTituloLivro(temp2->dado));
@@ -212,7 +269,8 @@ void comparaDadosLista(Lista *list1, Lista *list2, FILE *fSaida) {
 
     temp1 = temp1->prox;
   }
-  if (qtd == 0) {
+  if (qtd == 0)
+  {
     fprintf(fSaida, " Nenhum livro em comum");
   }
   fprintf(fSaida, "\n");

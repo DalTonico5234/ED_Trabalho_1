@@ -16,6 +16,7 @@
  *  leitor que recebe a recomendacao
  */
 typedef struct Leitor Leitor;
+
 typedef struct recomendacao Recomendacao;
 
 /**
@@ -26,8 +27,7 @@ typedef struct recomendacao Recomendacao;
  * @param sei_nao leitor que recebe a recomendacao
  * @return  A estrutura Recomendacao corretamente alocada e inicializada
  */
-Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao,
-                               Leitor *sei_nao, int id);
+Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao, Leitor *sei_nao, int id);
 
 /**
  * @brief Obtém o nome do livro de determinada recomendacao
@@ -35,6 +35,20 @@ Recomendacao *criaRecomendacao(Leitor *le_isso_po, Livro *recomendacao,
  * @return Nome do livro de faz_exercicio_po
  */
 char *getLivroRecomendado(void *faz_exercicio_po);
+
+/**
+ * @brief Obtém o livro de determinada recomendacao
+ * @param rec uma recomendacao
+ * @return Livro de rec
+ */
+Livro *retornaLivroRecomendado(Recomendacao *rec);
+
+/**
+ * @brief Obtém o id de determinada recomendacao
+ * @param rec uma recomendacao
+ * @return id de rec
+ */
+int getIdRecomendacao(void *rec);
 
 /**
  * @brief Imprime a mensagem da recomendação no momento que ela é feita
@@ -57,7 +71,4 @@ void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno, FILE *fSai
  */
 void liberaRecomendacao(void *ajeita_a_postura_po);
 
-Livro *retornaLivroRecomendado(Recomendacao *rec);
-
-int getIdRecomendacao(void *rec);
 #endif

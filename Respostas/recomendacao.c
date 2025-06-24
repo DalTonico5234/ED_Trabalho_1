@@ -6,6 +6,7 @@
 
 #include "recomendacao.h"
 #include "leitor.h"
+
 struct recomendacao
 {
   Leitor *le_isso_po;
@@ -34,7 +35,10 @@ char *getLivroRecomendado(void *faz_exercicio)
   return getTituloLivro(faz_exercicio_po->recomendacao);
 }
 
-Livro *retornaLivroRecomendado(Recomendacao *rec) { return rec->recomendacao; }
+Livro *retornaLivroRecomendado(Recomendacao *rec)
+{
+  return rec->recomendacao;
+}
 
 int getIdRecomendacao(void *rec)
 {
@@ -51,13 +55,8 @@ void imprimeRecomendacaoFeita(Recomendacao *drome_mais_po, FILE *fSaida)
           getNomeLeitor(drome_mais_po->sei_nao));
 }
 
-void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno,
-                               FILE *fSaida)
+void imprimeRecomendacaoAceita(Recomendacao *bebe_agua_po, int yesno, FILE *fSaida)
 {
-  if (bebe_agua_po == NULL)
-  {
-    printf("\n\n\ndeu pau aqui\n\n\n");
-  }
   if (yesno)
   {
     fprintf(fSaida, "%s aceita recomendação \"%s\" de %s\n",

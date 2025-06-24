@@ -61,6 +61,38 @@ int getIdLeitor(void *lei);
 char *getNomeLeitor(void *lei);
 
 /**
+ * @brief Obtém uma recomendação do leitor, buscando-a na lista de recomendações por um id
+ * @param lei O leitor
+ * @param id identificador único de recomendação
+ * @return Recomendação que tem id encontrada, NULL caso não esteja cadastrada
+ */
+Recomendacao *getRecomendacaoId(Leitor *lei, int id);
+
+/**
+ * @brief Obtém um livro lido do leitor, buscando-a na lista de lidos por um id
+ * @param lei O leitor
+ * @param id identificador único de livro
+ * @return Livro que tem id encontrado, NULL caso não esteja cadastrado
+ */
+Livro *getLivroLidoId(Leitor *lei, int id);
+
+/**
+ * @brief Obtém um livro desejado do leitor, buscando-a na lista de desejados por um id
+ * @param lei O leitor
+ * @param id identificador único de livro
+ * @return livro que tem id encontrado, NULL caso não esteja cadastrado
+ */
+Livro *getLivroDesejadoId(Leitor *lei, int id);
+
+/**
+ * @brief Busca livros lidos em comum entre dois leitores e os imprime
+ * @param lei1 um dos leitores que será comparado
+ * @param lei1 um dos leitores que será comparado
+ * @param fSaida ponteiro para o arquivo saidas.txt
+ */
+void comparaLeitores(Leitor *lei1, Leitor *lei2, FILE *fSaida);
+
+/**
  * @brief Imprime um leitor e todos seus atributos
  * @param leis leitor a ser impresso
  * @param fSaida ponteiro para o arquivo saidas.txt
@@ -115,13 +147,5 @@ void adicionarAfinidade(Leitor *destino, Leitor *afinidade);
  * @param lei O leitor
  */
 void liberaLeitor(void *lei);
-
-Recomendacao *getRecomendacaoId(Leitor *lei, int id);
-
-Livro *getLivroLidoId(Leitor *lei, int id);
-
-Livro *getLivroDesejadoId(Leitor *lei, int id);
-
-void comparaLeitores(Leitor *lei1, Leitor *lei2, FILE *fSaida);
 
 #endif

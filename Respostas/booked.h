@@ -27,18 +27,18 @@ bookED *criabookED(char *caminho_comum);
 
 void executabookED(bookED *alexandria);
 
-void imprimebookED(bookED *cairo);
-
-void liberabookED(bookED *leitura);
-
 void adicionaLivroLido(bookED *alexandria, int id1, int id2);
 
 void adicionaLivroDesejado(bookED *alexandria, int id1, int id2);
 
 void recomendarLivroED(bookED *alexandria, int id1, int id2, int id3);
 
-void processarRecomendacaoED(bookED *alexandria, int id3, int id2, int id1,
-                             int yesno);
+void processarRecomendacaoED(bookED *alexandria, int id3, int id2, int id1,int yesno);
 
 void buscaLivrosEmComum(bookED *alexandria, int id1, int id2);
+
+void imprimebookED(bookED *cairo);
+
+void liberabookED(bookED *leitura);
+
 #endif

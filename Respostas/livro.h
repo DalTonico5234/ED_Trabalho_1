@@ -28,14 +28,12 @@ typedef struct livro Livro;
  * @param genero Genero do livro
  * @return A estrutura Livro corretamente alocada e inicializada
  */
-Livro *criaLivro(int id, int ano_publi, char *titulo, char *autor,
-                 char *genero);
+Livro *criaLivro(int id, int ano_publi, char *titulo, char *autor, char *genero);
 
 /**
  * @brief Lê uma única estrutura do tipo Livro, e a cria usando criaLivro
  * @param fLivro Ponteiro para o arquivo do qual se deve ler o livro
- * @param foi_lido váriável que guarda o retorno do fscanf para uso na leitura
- * de arquivos
+ * @param foi_lido váriável que guarda o retorno do fscanf para uso na leitura de arquivos
  * @return A estrutura Livro corretamente lida e criada
  */
 Livro *leLivro(FILE *fLivro, int *foi_lido);
