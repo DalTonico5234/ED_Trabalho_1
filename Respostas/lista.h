@@ -82,4 +82,6 @@ void liberaLista(Lista *list, int modo);
 
 void preencheAfinidadesDiretas(Lista *leitores);
 
+int procuraAfinidade(Lista *afinidades, Leitor *des, Leitor *ant);
+
 #endif

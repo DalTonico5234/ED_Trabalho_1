@@ -138,7 +138,7 @@ void adicionaLivroDesejado(bookED *alexandria, int id1, int id2)
 
 void recomendarLivroED(bookED *alexandria, int id1, int id2, int id3)
 {
-    Leitor *leitor1 =(Leitor *)buscaDadoNaLista(alexandria->leitores, id1, getIdLeitor);
+    Leitor *leitor1 = (Leitor *)buscaDadoNaLista(alexandria->leitores, id1, getIdLeitor);
     Livro *livro = (Livro *)buscaDadoNaLista(alexandria->livros, id2, getIdLivro);
     Leitor *leitor2 = (Leitor *)buscaDadoNaLista(alexandria->leitores, id3, getIdLeitor);
 
@@ -265,7 +265,14 @@ void buscaAfinidade(bookED *alexandria, int id1, int id2)
         return;
     }
 
-    fprintf(alexandria->fSaida, "AINDA NÃO TÀ PRONTAAAAAAAAA\n");
+    if (verificaAfinidade(leitor1, leitor2))
+    {
+        fprintf(alexandria->fSaida, "Existe afinidade entre %s e %s\n", getNomeLeitor(leitor1), getNomeLeitor(leitor2));
+    }
+    else
+    {
+        fprintf(alexandria->fSaida, "Não existe afinidade entre %s e %s\n", getNomeLeitor(leitor1), getNomeLeitor(leitor2));
+    }
 }
 
 void executabookED(bookED *alexandria)

@@ -236,3 +236,8 @@ void preencheAfinidadeDireta(void *leiDes, void *leiOri)
     }
   }
 }
+
+int verificaAfinidade(Leitor *lei1, Leitor *lei2)
+{
+  return procuraAfinidade(lei1->afinidades, lei2, lei1);
+}

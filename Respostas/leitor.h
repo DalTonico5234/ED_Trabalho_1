@@ -152,4 +152,6 @@ void preencheAfinidadeDireta(void *leiDes, void *leiOri);
  */
 void liberaLeitor(void *lei);
 
+int verificaAfinidade(Leitor *lei1, Leitor *lei2);
+
 #endif

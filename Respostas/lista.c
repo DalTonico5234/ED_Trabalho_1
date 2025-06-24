@@ -294,3 +294,23 @@ void preencheAfinidadesDiretas(Lista *leitores)
     temp1 = temp1->prox;
   }
 }
+
+int procuraAfinidade(Lista *afinidades, Leitor *des, Leitor *ant)
+{
+  Celula *temp;
+  for (temp = afinidades->prim; temp != NULL; temp = temp->prox)
+  {
+    if (getIdLeitor(temp->dado) == getIdLeitor(des))
+    {
+      return 1;
+    }
+    else if (!(verificaAfinidade(des, ant)))
+    {
+      if (verificaAfinidade(temp->dado, des) )
+      {
+        return 1;
+      }
+    }
+  }
+  return 0;
+}
